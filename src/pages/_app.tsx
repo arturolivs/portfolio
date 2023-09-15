@@ -1,3 +1,5 @@
+import React from 'react'
+
 import type { AppProps } from 'next/app'
 import { ThemeProvider, DefaultTheme } from 'styled-components'
 import GlobalStyle from '../theme/globalstyles'

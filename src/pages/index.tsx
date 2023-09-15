@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-import * as S from './styles'
+import * as S from '../styles/home.styles'
 
 export default function Home() {
   return (
