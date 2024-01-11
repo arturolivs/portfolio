@@ -4,9 +4,8 @@ import Image from 'next/image'
 
 import * as S from './home.style'
 
-const Home = () => (
+const HomeTemplate = () => (
   <S.HomeSection>
-    <div />
     <S.HomeContent>
       <S.SocialLinks>
         <S.Link href="https://github.com/arturolivs" target="_blank">
@@ -49,4 +48,4 @@ const Home = () => (
   </S.HomeSection>
 )
 
-export default Home
+export default HomeTemplate
