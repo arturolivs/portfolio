@@ -6,6 +6,7 @@ import * as S from './home.style'
 
 const Home = () => (
   <S.HomeSection>
+    <div />
     <S.HomeContent>
       <S.SocialLinks>
         <S.Link href="https://github.com/arturolivs" target="_blank">

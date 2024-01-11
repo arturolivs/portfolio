@@ -13,21 +13,20 @@ export const HomeSection = styled.section`
 `
 
 export const HomeContent = styled.section`
-  padding-top: 300px;
   height: 100%;
   display: grid;
-  grid-template-rows: 80% min-content;
-  grid-template-columns: min-content 1fr;
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
 `
 
 export const SocialLinks = styled.aside`
-  margin-left: 180px;
   display: flex;
   flex-direction: column;
   row-gap: 24px;
 
   grid-column: 1 / 2;
-  grid-row: 1 / 3;
+  grid-row: 5 / 13;
+  justify-self: flex-end;
 `
 
 export const Link = styled.a`
@@ -37,7 +36,8 @@ export const Link = styled.a`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 475px;
+  grid-column: 5 / 13;
+  grid-row: 5 / 12;
 `
 
 export const Name = styled.h1`
@@ -70,8 +70,8 @@ export const ScrollToContinue = styled.div`
   align-items: center;
   row-gap: 0.5rem;
 
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
+  grid-column: 1 / 13;
+  grid-row: 12 / 13;
 `
 
 export const ScrollText = styled.span`
