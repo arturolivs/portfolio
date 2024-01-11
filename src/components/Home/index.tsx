@@ -12,8 +12,8 @@ const Home = () => (
           <Image
             src="/assets/icons/github.png"
             alt="Ir para o github"
-            width={50}
-            height={50}
+            width={80}
+            height={80}
           />
         </S.Link>
 
@@ -25,8 +25,8 @@ const Home = () => (
             src="/assets/icons/linkedin.png"
             alt="Ir para o linkedin"
             color="white"
-            width={50}
-            height={50}
+            width={80}
+            height={80}
           />
         </S.Link>
       </S.SocialLinks>

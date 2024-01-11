@@ -1,10 +1,19 @@
 import React from 'react'
 
+import Image from 'next/image'
+
 import * as S from './header.style'
 
 const Header = () => (
   <S.Header>
-    <S.Logo>A O S</S.Logo>
+    <a href="#">
+      <Image
+        src="/assets/svg/logo.svg"
+        alt="Logo que representa as iniciais A O S, link para ir para a página inicial"
+        width={100}
+        height={40}
+      />
+    </a>
 
     <nav>
       <S.Links>

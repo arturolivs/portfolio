@@ -5,10 +5,10 @@ export const HomeSection = styled.section`
   height: 100vh;
 
   background: linear-gradient(
-    180.04deg,
-    #1640ad -23.04%,
-    #1665ad -23.04%,
-    #182277 99.97%
+    180deg,
+    #1640ad 0.02%,
+    #1665ad 0.02%,
+    #182277 99.98%
   );
 `
 
@@ -21,7 +21,7 @@ export const HomeContent = styled.section`
 `
 
 export const SocialLinks = styled.aside`
-  margin-left: 90px;
+  margin-left: 180px;
   display: flex;
   flex-direction: column;
   row-gap: 24px;
@@ -37,7 +37,7 @@ export const Link = styled.a`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 600px;
+  margin-left: 475px;
 `
 
 export const Name = styled.h1`
@@ -61,6 +61,7 @@ export const Text2 = styled.span`
   font-family: 'Fira Code', monospace;
   color: #99d98c;
   font-size: 40px;
+  padding-top: 45px;
 `
 
 export const ScrollToContinue = styled.div`
