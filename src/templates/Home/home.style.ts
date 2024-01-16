@@ -3,20 +3,7 @@ import styled from 'styled-components'
 export const HomeSection = styled.section`
   width: 100%;
   height: 100vh;
-
-  background: linear-gradient(
-    180deg,
-    #1640ad 0.02%,
-    #1665ad 0.02%,
-    #182277 99.98%
-  );
-`
-
-export const HomeContent = styled.section`
-  height: 100%;
-  display: grid;
-  grid-template-rows: repeat(12, 1fr);
-  grid-template-columns: repeat(12, 1fr);
+  background: #042946;
 `
 
 export const SocialLinks = styled.aside`

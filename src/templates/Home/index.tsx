@@ -1,12 +1,13 @@
 import React from 'react'
-
 import Image from 'next/image'
+
+import { Grid } from '../../components/Grid'
 
 import * as S from './home.style'
 
 const HomeTemplate = () => (
   <S.HomeSection>
-    <S.HomeContent>
+    <Grid>
       <S.SocialLinks>
         <S.Link href="https://github.com/arturolivs" target="_blank">
           <Image
@@ -44,7 +45,7 @@ const HomeTemplate = () => (
         <S.ScrollText>Scroll para continuar</S.ScrollText>
         <S.Line />
       </S.ScrollToContinue>
-    </S.HomeContent>
+    </Grid>
   </S.HomeSection>
 )
 
