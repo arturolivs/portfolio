@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import Text from '../../components/Text'
+
 export const HomeSection = styled.section`
   width: 100%;
   height: 100vh;
@@ -47,7 +49,7 @@ export const Content = styled.div`
   }
 `
 
-export const Name = styled.h1`
+export const Name = styled(Text)`
   font-family: 'Roboto Mono', monospace;
   color: #e6e6e6;
   font-size: 53px;
@@ -55,7 +57,7 @@ export const Name = styled.h1`
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 `
 
-export const Text1 = styled.span`
+export const WelcomeText = styled(Text)`
   font-family: 'Fira Code', monospace;
   color: #99d98c;
   font-size: 28px;
@@ -65,10 +67,12 @@ export const Text1 = styled.span`
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 `
 
-export const Text2 = styled.span`
+export const Profession = styled(Text)`
   font-family: 'Fira Code', monospace;
   color: #99d98c;
   font-size: 40px;
+  font-weight: 500;
+
   padding-top: 45px;
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 `
@@ -83,7 +87,7 @@ export const ScrollToContinue = styled.div`
   grid-row: 12 / 13;
 `
 
-export const ScrollText = styled.span`
+export const ScrollText = styled(Text)`
   cursor: default;
   font-family: 'Roboto Mono';
   color: #e6e6e6;

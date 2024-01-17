@@ -33,12 +33,14 @@ const HomeTemplate = () => (
       </S.SocialLinks>
 
       <S.Content>
-        <S.Text1>Olá, meu nome é</S.Text1>
-        <S.Name>
+        <S.WelcomeText>Olá, meu nome é</S.WelcomeText>
+
+        <S.Name as="h1">
           Artur Oliveira <br />
           Santiago
         </S.Name>
-        <S.Text2>Desenvolvedor de sistemas</S.Text2>
+
+        <S.Profession>Desenvolvedor de sistemas</S.Profession>
       </S.Content>
 
       <S.ScrollToContinue>
