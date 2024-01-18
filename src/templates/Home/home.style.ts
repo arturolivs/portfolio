@@ -15,7 +15,7 @@ export const HomeSection = styled.section`
 export const SocialLinks = styled.aside`
   display: flex;
   flex-direction: column;
-  row-gap: 24px;
+  row-gap: 40px;
 
   grid-column: 1 / 2;
   grid-row: 5 / 13;
@@ -24,12 +24,21 @@ export const SocialLinks = styled.aside`
 
 export const Link = styled.a`
   cursor: pointer;
+
+  svg {
+    transition: fill 0.3s;
+  }
+  &:hover {
+    svg {
+      fill: #99d98c;
+    }
+  }
 `
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  grid-column: 5 / 13;
+  grid-column: 6 / 13;
   grid-row: 5 / 12;
 
   position: relative;
@@ -38,12 +47,12 @@ export const Content = styled.div`
     content: '';
     position: absolute;
     top: -35%;
-    left: 0;
+    left: -5%;
     width: 700px;
     height: 700px;
     border-radius: 50%;
 
-    background: rgba(0, 168, 150, 0.04);
+    background: rgb(0 168 150 / 5%);
     filter: blur(50px);
     pointer-events: none;
   }

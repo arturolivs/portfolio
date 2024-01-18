@@ -1,7 +1,9 @@
 import React from 'react'
-import Image from 'next/image'
 
 import { Grid } from '../../components/Grid'
+
+import GitHubLogo from '../../assets/icons/github-logo.svg'
+import LinkedinLogo from '../../assets/icons/linkedin-logo.svg'
 
 import * as S from './home.style'
 
@@ -10,25 +12,14 @@ const HomeTemplate = () => (
     <Grid>
       <S.SocialLinks>
         <S.Link href="https://github.com/arturolivs" target="_blank">
-          <Image
-            src="/assets/icons/github.png"
-            alt="Ir para o github"
-            width={80}
-            height={80}
-          />
+          <GitHubLogo width={75} height={75} fill="#fff" />
         </S.Link>
 
         <S.Link
           href="https://www.linkedin.com/in/artur-oliveira-69439170/"
           target="_blank"
         >
-          <Image
-            src="/assets/icons/linkedin.png"
-            alt="Ir para o linkedin"
-            color="white"
-            width={80}
-            height={80}
-          />
+          <LinkedinLogo width={75} height={75} fill="#fFF" />
         </S.Link>
       </S.SocialLinks>
 

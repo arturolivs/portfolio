@@ -8,7 +8,7 @@ const Header = () => (
   <S.Header>
     <a href="#">
       <Image
-        src="/assets/svg/logo.svg"
+        src="/assets/icons/logo.svg"
         alt="Logo que representa as iniciais A O S, link para ir para a página inicial"
         width={100}
         height={40}
