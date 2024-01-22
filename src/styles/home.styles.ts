@@ -48,6 +48,6 @@ export const Dot = styled.div`
   }
 
   &:nth-child(3) {
-    animation-delay: 0.3s;
+    animation-delay: 0.2s;
   }
 `

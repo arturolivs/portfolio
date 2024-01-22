@@ -12,14 +12,14 @@ const HomeTemplate = () => (
     <Grid>
       <S.SocialLinks>
         <S.Link href="https://github.com/arturolivs" target="_blank">
-          <GitHubLogo width={75} height={75} fill="#fff" />
+          <GitHubLogo width={75} height={75} color="#fff" />
         </S.Link>
 
         <S.Link
           href="https://www.linkedin.com/in/artur-oliveira-69439170/"
           target="_blank"
         >
-          <LinkedinLogo width={75} height={75} fill="#fFF" />
+          <LinkedinLogo width={75} height={75} color="#fFF" />
         </S.Link>
       </S.SocialLinks>
 

@@ -1,21 +1,16 @@
 import React from 'react'
 
-import Image from 'next/image'
+import Logo from '../../assets/icons/logo.svg'
 
 import * as S from './header.style'
 
 const Header = () => (
   <S.Header>
-    <a href="#">
-      <Image
-        src="/assets/icons/logo.svg"
-        alt="Logo que representa as iniciais A O S, link para ir para a página inicial"
-        width={100}
-        height={40}
-      />
-    </a>
+    <S.GoToHome href="#">
+      <Logo width={100} height={40} color="#fff" />
+    </S.GoToHome>
 
-    <nav>
+    <S.MenuNavigation>
       <S.Links>
         <S.Item>
           <S.Link href="#">Sobre</S.Link>
@@ -27,7 +22,7 @@ const Header = () => (
           <S.Link href="#">Contato</S.Link>
         </S.Item>
       </S.Links>
-    </nav>
+    </S.MenuNavigation>
   </S.Header>
 )
 

@@ -17,20 +17,21 @@ export const SocialLinks = styled.aside`
   flex-direction: column;
   row-gap: 40px;
 
-  grid-column: 1 / 2;
+  grid-column: 2 / 3;
   grid-row: 5 / 13;
-  justify-self: flex-end;
 `
 
 export const Link = styled.a`
   cursor: pointer;
+  width: fit-content;
 
   svg {
-    transition: fill 0.3s;
+    transition: color 0.2s;
   }
+
   &:hover {
     svg {
-      fill: #99d98c;
+      color: #99d98c;
     }
   }
 `

@@ -7,23 +7,41 @@ export const Header = styled.header`
   left: 0;
 
   width: 100%;
-  height: 75px;
-  background-color: transparent;
+  height: 90px;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
   align-items: center;
-  justify-content: space-between;
 
-  padding: 0 90px;
+  border: 1px solid #1d374a;
+
+  background-color: transparent;
+  background: linear-gradient(180deg, #042d4d 0%, #08243a 100%);
+  box-shadow: 0px 7px 5.3px 0px rgba(0, 0, 0, 0.27);
 `
 
-export const Logo = styled.span`
-  color: #fafafa;
+export const GoToHome = styled.a`
+  width: fit-content;
+  grid-column: 2 / 2;
+
+  svg {
+    transition: color 0.2s;
+  }
+
+  &:hover {
+    svg {
+      color: #99d98c;
+    }
+  }
+`
+
+export const MenuNavigation = styled.nav`
+  grid-column: 10 / 13;
 `
 
 export const Links = styled.ul`
   display: flex;
-  column-gap: 2.5rem;
+  column-gap: 3rem;
 `
 
 export const Item = styled.li``
@@ -31,6 +49,11 @@ export const Item = styled.li``
 export const Link = styled.a`
   font-family: 'Roboto Mono';
   color: #fafafa;
-  font-size: 26px;
-  font-weight: 500;
+  font-size: 24px;
+
+  transition: color 0.2s;
+
+  &:hover {
+    color: #99d98c;
+  }
 `
