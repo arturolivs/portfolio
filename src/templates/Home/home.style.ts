@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 
 import Text from '../../components/Text'
+import { opacify } from '../../theme/utils'
 
 export const HomeSection = styled.section`
   width: 100%;
@@ -56,7 +57,8 @@ export const Content = styled.div`
       height: 700px;
       border-radius: 50%;
 
-      background: ${theme.colors.secondary_500};
+      background: ${opacify(theme.colors.secondary_500, 0.05)};
+
       filter: blur(100px);
       pointer-events: none;
     }
