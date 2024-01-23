@@ -3,8 +3,8 @@ import 'styled-components'
 declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {
-      primary: string
-      secondary: string
+      primary_500: string
+      secondary_500: string
     }
   }
 }

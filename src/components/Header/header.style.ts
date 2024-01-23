@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Header = styled.header`
   position: fixed;
@@ -21,18 +21,20 @@ export const Header = styled.header`
 `
 
 export const GoToHome = styled.a`
-  width: fit-content;
-  grid-column: 2 / 2;
+  ${({ theme }) => css`
+    width: fit-content;
+    grid-column: 2 / 2;
 
-  svg {
-    transition: color 0.2s;
-  }
-
-  &:hover {
     svg {
-      color: #99d98c;
+      transition: color 0.2s;
     }
-  }
+
+    &:hover {
+      svg {
+        color: ${theme.colors.secondary_500};
+      }
+    }
+  `}
 `
 
 export const MenuNavigation = styled.nav`
@@ -47,13 +49,15 @@ export const Links = styled.ul`
 export const Item = styled.li``
 
 export const Link = styled.a`
-  font-family: 'Roboto Mono';
-  color: #fafafa;
-  font-size: 24px;
+  ${({ theme }) => css`
+    font-family: 'Roboto Mono';
+    color: #fafafa;
+    font-size: 24px;
 
-  transition: color 0.2s;
+    transition: color 0.2s;
 
-  &:hover {
-    color: #99d98c;
-  }
+    &:hover {
+      color: ${theme.colors.secondary_500};
+    }
+  `}
 `

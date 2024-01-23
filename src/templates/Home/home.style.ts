@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import Text from '../../components/Text'
 
@@ -22,41 +22,45 @@ export const SocialLinks = styled.aside`
 `
 
 export const Link = styled.a`
-  cursor: pointer;
-  width: fit-content;
+  ${({ theme }) => css`
+    cursor: pointer;
+    width: fit-content;
 
-  svg {
-    transition: color 0.2s;
-  }
-
-  &:hover {
     svg {
-      color: #99d98c;
+      transition: color 0.2s;
     }
-  }
+
+    &:hover {
+      svg {
+        color: ${theme.colors.secondary_500};
+      }
+    }
+  `}
 `
 
 export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  grid-column: 6 / 13;
-  grid-row: 5 / 12;
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    grid-column: 6 / 13;
+    grid-row: 5 / 12;
 
-  position: relative;
+    position: relative;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: -35%;
-    left: -5%;
-    width: 700px;
-    height: 700px;
-    border-radius: 50%;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -35%;
+      left: -5%;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
 
-    background: rgb(0 168 150 / 5%);
-    filter: blur(50px);
-    pointer-events: none;
-  }
+      background: ${theme.colors.secondary_500};
+      filter: blur(100px);
+      pointer-events: none;
+    }
+  `}
 `
 
 export const Name = styled(Text)`
@@ -68,23 +72,27 @@ export const Name = styled(Text)`
 `
 
 export const WelcomeText = styled(Text)`
-  font-family: 'Fira Code', monospace;
-  color: #99d98c;
-  font-size: 28px;
-  font-weight: 500;
+  ${({ theme }) => css`
+    font-family: 'Fira Code', monospace;
+    color: ${theme.colors.secondary_500};
+    font-size: 28px;
+    font-weight: 500;
 
-  margin-bottom: 13px;
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 13px;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  `}
 `
 
 export const Profession = styled(Text)`
-  font-family: 'Fira Code', monospace;
-  color: #99d98c;
-  font-size: 40px;
-  font-weight: 500;
+  ${({ theme }) => css`
+    font-family: 'Fira Code', monospace;
+    color: ${theme.colors.secondary_500};
+    font-size: 40px;
+    font-weight: 500;
 
-  padding-top: 45px;
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-top: 45px;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  `}
 `
 
 export const ScrollToContinue = styled.div`
