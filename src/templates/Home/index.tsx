@@ -6,11 +6,14 @@ import GitHubLogo from '../../assets/icons/github-logo.svg'
 import LinkedinLogo from '../../assets/icons/linkedin-logo.svg'
 
 import * as S from './home.style'
+import HomeBackgroundDetails from '../../components/HomeBackgroundDetails'
 
 const HomeTemplate = () => (
   <S.HomeSection>
+    <HomeBackgroundDetails />
+
     <Grid>
-      <S.SocialLinks>
+      <S.SocialLinksSection>
         <S.Link href="https://github.com/arturolivs" target="_blank">
           <GitHubLogo width={75} height={75} color="#fff" />
         </S.Link>
@@ -21,7 +24,7 @@ const HomeTemplate = () => (
         >
           <LinkedinLogo width={75} height={75} color="#fFF" />
         </S.Link>
-      </S.SocialLinks>
+      </S.SocialLinksSection>
 
       <S.Content>
         <S.WelcomeText>Olá, meu nome é</S.WelcomeText>

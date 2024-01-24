@@ -24,7 +24,7 @@ export const HomeSection = styled.section`
   `}
 `
 
-export const SocialLinks = styled.aside`
+export const SocialLinksSection = styled.aside`
   display: flex;
   flex-direction: column;
   row-gap: 40px;

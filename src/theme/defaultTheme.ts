@@ -9,7 +9,7 @@ const secondary_palette = {
 const neutral_palette = {
   neutral_500: '#797e82',
   neutral_100: '#f2f2f2',
-  neutral_white: '#fff',
+  neutral_white: '#ffffff',
 }
 
 export default {
