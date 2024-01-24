@@ -1,14 +1,22 @@
-import styled, { css } from 'styled-components'
+import styled, { DefaultTheme, css } from 'styled-components'
 import { opacify } from '../../theme/utils'
+
+type GeometricShapesProps = {
+  width?: number | string
+  height?: number | string
+  top?: number
+  left?: number
+  rotate?: number
+}
 
 export const HelloWord = styled.span`
   ${({ theme }) => css`
     position: absolute;
     font-family: 'Fira Code';
 
-    color: ${opacify(theme.colors.neutral_white, 0.2)};
+    color: ${opacify(theme.colors.neutral_white, 0.1)};
     font-size: 0.8rem;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.3rem;
     pointer-events: none;
 
     &:nth-child(1) {
@@ -35,14 +43,21 @@ export const HelloWord = styled.span`
   `}
 `
 
-export const Square = styled.div`
-  ${({ theme }) => css`
+export const GeometricShapes = styled.div`
+  ${({
+    theme,
+    width = '1rem',
+    height = '1rem',
+    top = 0,
+    left = 0,
+    rotate = 0,
+  }: GeometricShapesProps & { theme: DefaultTheme }) => css`
     position: absolute;
-    width: 5rem;
-    height: 5rem;
-    border: 1px solid ${opacify(theme.colors.neutral_white, 0.2)};
-    top: 85%;
-    left: 90%;
-    transform: rotate(25deg);
+    border: 1px solid ${opacify(theme.colors.neutral_white, 0.1)};
+    width: ${width};
+    height: ${height};
+    top: ${top}%;
+    left: ${left}%;
+    transform: rotate(${rotate}deg);
   `}
 `
