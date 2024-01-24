@@ -1,10 +1,10 @@
-<svg width="101" height="41" viewBox="0 0 101 41" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<svg width="1rem" height="1rem" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
 
   <title>Logo AOS</title>
 
-  <path d="M73.8789 29.082C73.8789 29.082 77.0227 27.8121 87.4392 29.082C97.8556 30.3519 100.999 29.082 100.999 29.082V36.2663H73.8789V29.082Z" fill="currentColor"/>
-  <path d="M73.8789 3.33398H100.999V10.591C100.999 10.591 98.1909 11.6973 87.4045 10.591C76.6181 9.48463 73.8789 10.591 73.8789 10.591V3.33398Z" fill="currentColor"/>
-  <circle cx="54.5078" cy="18.8311" r="13.9346" stroke="currentColor" stroke-width="1"/>
-  <path d="M6.07827 37.1828L17.7017 3.33424L26.4199 3.33424L14.466 37.1827L6.07827 37.1828Z" fill="currentColor"/>
-  <path d="M17.7018 3.33228L30.2914 36.8799L40.0947 36.8803L26.4182 3.33228L17.7018 3.33228Z" fill="currentColor"/>
+  <path d="M0.000118752 59.9998L29.003 -0.00553078" stroke="currentColor"/>
+  <path d="M60.002 59.9993L29 3.23527e-06" stroke="currentColor"/>
+  <path d="M59.5 35.8496C59.5 48.5405 48.4259 59.5 36 59.5C23.6289 59.5 14.5 48.5988 14.5 35.8496C14.5 29.0394 16.7838 23.4582 20.5932 19.5816C24.4026 15.705 29.7699 13.5 36 13.5C48.4626 13.5 59.5 23.194 59.5 35.8496Z" stroke="currentColor"/>
+  <path d="M28.5 0.5H60" stroke="currentColor"/>
+  <path d="M35 59.5042L60 59.5042" stroke="currentColor"/>
 </svg>

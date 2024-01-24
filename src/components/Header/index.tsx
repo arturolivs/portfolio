@@ -7,7 +7,7 @@ import * as S from './header.style'
 const Header = () => (
   <S.Header>
     <S.GoToHome href="#">
-      <Logo width={100} height={40} color="#fff" />
+      <Logo width={60} height={60} color="#fff" />
     </S.GoToHome>
 
     <S.MenuNavigation>
