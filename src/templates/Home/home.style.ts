@@ -4,13 +4,24 @@ import Text from '../../components/Text'
 import { opacify } from '../../theme/utils'
 
 export const HomeSection = styled.section`
-  width: 100%;
-  height: 100vh;
+  ${({ theme }) => css`
+    width: 100%;
+    height: 100vh;
 
-  background: #042946;
-  background-image: linear-gradient(rgba(5, 255, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(5, 255, 0, 0.03) 1px, transparent 1px);
-  background-size: 2em 2em;
+    background: ${theme.colors.primary_500};
+
+    background-image: linear-gradient(
+        ${opacify(theme.colors.secondary_500, 0.04)} 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        ${opacify(theme.colors.secondary_500, 0.04)} 1px,
+        transparent 1px
+      );
+
+    background-size: 2em 2em;
+  `}
 `
 
 export const SocialLinks = styled.aside`
@@ -66,11 +77,13 @@ export const Content = styled.div`
 `
 
 export const Name = styled(Text)`
-  font-family: 'Roboto Mono', monospace;
-  color: #e6e6e6;
-  font-size: 53px;
-  font-weight: 500;
-  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  ${({ theme }) => css`
+    font-family: 'Roboto Mono', monospace;
+    color: ${theme.colors.neutral_white};
+    font-size: 53px;
+    font-weight: 500;
+    text-shadow: 4px 4px 4px ${opacify(theme.colors.neutral_500, 0.4)};
+  `}
 `
 
 export const WelcomeText = styled(Text)`
@@ -81,7 +94,7 @@ export const WelcomeText = styled(Text)`
     font-weight: 500;
 
     margin-bottom: 13px;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: 4px 4px 4px ${opacify(theme.colors.neutral_500, 0.4)};
   `}
 `
 
@@ -93,7 +106,7 @@ export const Profession = styled(Text)`
     font-weight: 500;
 
     padding-top: 45px;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: 4px 4px 4px ${opacify(theme.colors.neutral_500, 0.4)};
   `}
 `
 
@@ -108,13 +121,16 @@ export const ScrollToContinue = styled.div`
 `
 
 export const ScrollText = styled(Text)`
-  cursor: default;
-  font-family: 'Roboto Mono';
-  color: #e6e6e6;
+  ${({ theme }) => css`
+    cursor: default;
+    font-family: 'Roboto Mono';
+    color: ${theme.colors.neutral_100};
+  `}
 `
-
 export const Line = styled.div`
-  background-color: #e6e6e6;
-  width: 1px;
-  height: 80px;
+  ${({ theme }) => css`
+    width: 1px;
+    height: 80px;
+    background-color: ${theme.colors.neutral_100};
+  `}
 `

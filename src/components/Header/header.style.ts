@@ -13,11 +13,13 @@ export const Header = styled.header`
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
 
-  border: 1px solid #1d374a;
-
   background-color: transparent;
-  background: linear-gradient(180deg, #042d4d 0%, #08243a 100%);
-  box-shadow: 0px 7px 5.3px 0px rgba(0, 0, 0, 0.27);
+
+  /**TODO: Aplicar no scroll para cima
+    border: 1px solid #1d374a;
+    background: linear-gradient(180deg, #042d4d 0%, #08243a 100%);
+    box-shadow: 0px 7px 5.3px 0px rgba(0, 0, 0, 0.27);
+  */
 `
 
 export const GoToHome = styled.a`
@@ -51,7 +53,7 @@ export const Item = styled.li``
 export const Link = styled.a`
   ${({ theme }) => css`
     font-family: 'Roboto Mono';
-    color: #fafafa;
+    color: ${theme.colors.neutral_100};
     font-size: 24px;
 
     transition: color 0.2s;
