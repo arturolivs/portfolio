@@ -1,10 +1,13 @@
-<svg width="1rem" height="1rem" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-  <title>Logo AOS</title>
-
-  <path d="M0.000118752 59.9998L29.003 -0.00553078" stroke="currentColor"/>
-  <path d="M60.002 59.9993L29 3.23527e-06" stroke="currentColor"/>
-  <path d="M59.5 35.8496C59.5 48.5405 48.4259 59.5 36 59.5C23.6289 59.5 14.5 48.5988 14.5 35.8496C14.5 29.0394 16.7838 23.4582 20.5932 19.5816C24.4026 15.705 29.7699 13.5 36 13.5C48.4626 13.5 59.5 23.194 59.5 35.8496Z" stroke="currentColor"/>
-  <path d="M28.5 0.5H60" stroke="currentColor"/>
-  <path d="M35 59.5042L60 59.5042" stroke="currentColor"/>
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_346_218)">
+<rect width="60" height="60" fill="none"/>
+<path d="M30 0.5L55 1" stroke="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M30 59C46.0163 59 59 46.0163 59 30C59 13.9837 46.0163 1 30 1C13.9837 1 1 13.9837 1 30C1 46.0163 13.9837 59 30 59ZM30 60C46.5685 60 60 46.5685 60 30C60 13.4315 46.5685 0 30 0C13.4315 0 0 13.4315 0 30C0 46.5685 13.4315 60 30 60ZM23.0958 19.3054L0.894467 60.6258L0.0135676 60.1525L22.2149 18.8321L23.0958 19.3054ZM59.5528 59.7236L30.0528 0.723631L30.9472 0.276417L60.4473 59.2764L59.5528 59.7236Z" fill="white"/>
+<line x1="60" y1="59.5" x2="20" y2="59.5" stroke="white"/>
+</g>
+<defs>
+<clipPath id="clip0_346_218">
+<rect width="60" height="60" fill="white"/>
+</clipPath>
+</defs>
 </svg>
