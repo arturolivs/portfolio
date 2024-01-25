@@ -109,28 +109,3 @@ export const Profession = styled(Text)`
     text-shadow: 4px 4px 4px ${opacify(theme.colors.neutral_500, 0.4)};
   `}
 `
-
-export const ScrollToContinue = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 0.5rem;
-
-  grid-column: 1 / 13;
-  grid-row: 12 / 13;
-`
-
-export const ScrollText = styled(Text)`
-  ${({ theme }) => css`
-    cursor: default;
-    font-family: 'Roboto Mono';
-    color: ${theme.colors.neutral_100};
-  `}
-`
-export const Line = styled.div`
-  ${({ theme }) => css`
-    width: 1px;
-    height: 80px;
-    background-color: ${theme.colors.neutral_100};
-  `}
-`

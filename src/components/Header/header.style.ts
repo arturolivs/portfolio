@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { opacify } from '../../theme/utils'
 
 export const Header = styled.header`
   position: fixed;
@@ -55,7 +56,7 @@ export const Link = styled.a`
     font-family: 'Roboto Mono';
     color: ${theme.colors.neutral_100};
     font-size: 24px;
-
+    text-shadow: 4px 4px 4px ${opacify(theme.colors.neutral_500, 0.4)};
     transition: color 0.2s;
 
     &:hover {

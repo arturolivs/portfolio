@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components'
 
 export const AboutMeSection = styled.section`
-  ${() => css`
+  ${({ theme }) => css`
     width: 100%;
     height: 100vh;
 
-    background: #afafaf;
+    background: ${theme.colors.primary_500};
   `}
 `

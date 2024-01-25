@@ -14,7 +14,7 @@ export const HelloWord = styled.span`
     position: absolute;
     font-family: 'Fira Code';
 
-    color: ${opacify(theme.colors.neutral_white, 0.15)};
+    color: ${opacify(theme.colors.neutral_white, 0.19)};
     font-size: 0.8rem;
     letter-spacing: 0.3rem;
     pointer-events: none;
@@ -55,7 +55,7 @@ export const GeometricShapes = styled.div`
     rotate = 0,
   }: GeometricShapesProps & { theme: DefaultTheme }) => css`
     position: absolute;
-    border: 1px solid ${opacify(theme.colors.neutral_white, 0.15)};
+    border: 1px solid ${opacify(theme.colors.neutral_white, 0.12)};
     width: ${width};
     height: ${height};
     top: ${top}%;
