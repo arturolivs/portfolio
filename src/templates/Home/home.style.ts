@@ -8,8 +8,6 @@ export const HomeSection = styled.section`
     width: 100%;
     height: 100vh;
 
-    background: ${theme.colors.primary_500};
-
     background-image: linear-gradient(
         ${opacify(theme.colors.secondary_500, 0.04)} 1px,
         transparent 1px

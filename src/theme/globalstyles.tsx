@@ -2,6 +2,11 @@ import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
 
+body {
+  background: ${({ theme }) => theme.colors.primary_500};
+}
+
+
 * {
   margin: 0;
   padding: 0;

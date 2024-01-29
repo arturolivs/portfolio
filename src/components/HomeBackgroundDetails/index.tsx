@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import * as S from './homoBackgroundDetails.styles'
 
-const DEGREE_LIMIT = 5
+const DEGREE_LIMIT = 3
 
 const HomeBackgroundDetails = () => {
   const [_, setClientX] = useState(0) //eslint-disable-line
@@ -17,9 +17,13 @@ const HomeBackgroundDetails = () => {
         const leftDirection = clientXPrev > clientX
 
         if (leftDirection) {
-          setDeg((prevDeg) => (prevDeg > DEGREE_LIMIT ? prevDeg : ++prevDeg))
+          setDeg((prevDeg) =>
+            prevDeg > DEGREE_LIMIT ? DEGREE_LIMIT : ++prevDeg,
+          )
         } else {
-          setDeg((prevDeg) => (prevDeg < -DEGREE_LIMIT ? prevDeg : --prevDeg))
+          setDeg((prevDeg) =>
+            prevDeg < -DEGREE_LIMIT ? -DEGREE_LIMIT : --prevDeg,
+          )
         }
 
         return clientX
@@ -34,7 +38,7 @@ const HomeBackgroundDetails = () => {
   }, [])
 
   return (
-    <>
+    <S.HomeBackgroundDetails>
       <S.HelloWord rotate={deg}>
         console.log(&apos;Olá mundo!!&apos;)
       </S.HelloWord>
@@ -52,7 +56,7 @@ const HomeBackgroundDetails = () => {
         height="5rem"
         top={85}
         left={90}
-        rotate={25 + deg}
+        rotate={deg}
       />
 
       <S.GeometricShapes
@@ -60,7 +64,7 @@ const HomeBackgroundDetails = () => {
         height="5rem"
         top={15}
         left={2}
-        rotate={40 + deg}
+        rotate={deg}
       />
 
       <S.GeometricShapes
@@ -68,7 +72,7 @@ const HomeBackgroundDetails = () => {
         height="1px"
         top={75}
         left={35}
-        rotate={35 + deg}
+        rotate={deg}
       />
 
       <S.GeometricShapes
@@ -76,7 +80,7 @@ const HomeBackgroundDetails = () => {
         height="1px"
         top={30}
         left={90}
-        rotate={45 + deg}
+        rotate={deg}
       />
 
       <S.GeometricShapes
@@ -84,9 +88,9 @@ const HomeBackgroundDetails = () => {
         height="7rem"
         top={14}
         left={23}
-        rotate={-10 + deg}
+        rotate={deg}
       />
-    </>
+    </S.HomeBackgroundDetails>
   )
 }
 

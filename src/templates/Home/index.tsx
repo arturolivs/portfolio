@@ -11,6 +11,7 @@ import HomeScrollIndicator from '../../components/HomeScrollIndicator'
 
 const HomeTemplate = () => {
   const theme = useTheme()
+
   return (
     <S.HomeSection>
       <HomeBackgroundDetails />
