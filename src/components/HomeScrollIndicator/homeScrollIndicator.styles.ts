@@ -25,7 +25,7 @@ export const ScrollToContinue = styled.div`
 
   &:hover {
     span {
-      transform: translateX(5rem);
+      transform: translateX(4rem);
 
       &::first-letter {
         text-transform: lowercase;
@@ -33,12 +33,24 @@ export const ScrollToContinue = styled.div`
 
       &::before {
         opacity: 1;
-        transform: translateX(-9.8rem);
+        transform: translateX(-7.8rem);
       }
     }
 
     > div::before {
       height: 35%;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    &:hover {
+      span {
+        transform: translateX(5rem);
+
+        &::before {
+          transform: translateX(-11.8rem);
+        }
+      }
     }
   }
 `
@@ -50,6 +62,7 @@ export const ScrollText = styled(Text)`
 
     text-align: center;
     font-family: 'Roboto Mono';
+    font-size: 0.8rem;
     color: ${theme.colors.neutral_100};
 
     pointer-events: none;
@@ -58,9 +71,13 @@ export const ScrollText = styled(Text)`
     &::before {
       content: 'Use scroll para ';
       position: absolute;
-
+      width: max-content;
       opacity: 0;
       transition: all 0.5s;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 1.2rem;
     }
   `}
 `

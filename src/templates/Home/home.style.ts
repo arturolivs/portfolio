@@ -8,7 +8,6 @@ export const HomeSection = styled.section`
   ${({ theme }) => css`
     width: 100%;
     height: 100dvh;
-
     background-image: linear-gradient(
         ${opacify(theme.colors.secondary_500, 0.04)} 1px,
         transparent 1px
@@ -20,23 +19,6 @@ export const HomeSection = styled.section`
       );
 
     background-size: 2em 2em;
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: clamp(5vw, 50vw, 85vw);
-      height: clamp(5vw, 50vw, 85vw);
-      border-radius: 50%;
-
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-
-      background: ${opacify(theme.colors.secondary_500, 0.05)};
-
-      filter: blur(0);
-      pointer-events: none;
-    }
   `}
 `
 
@@ -69,7 +51,7 @@ export const Link = styled.a`
 `
 
 export const Content = styled.div`
-  ${() => css`
+  ${({ theme }) => css`
     display: flex;
     flex-direction: column;
     grid-column: 4 / 13;
@@ -77,12 +59,63 @@ export const Content = styled.div`
 
     position: relative;
 
+    &::before {
+      content: '';
+      position: absolute;
+
+      width: 80dvw;
+      height: 80dvw;
+      border-radius: 50%;
+
+      top: -20%;
+      left: -17%;
+
+      background: ${opacify(theme.colors.secondary_500, 0.05)};
+      filter: blur(2rem);
+      pointer-events: none;
+    }
+
     @media (min-width: 768px) {
       grid-column: 5 / 13;
+
+      &::before {
+        width: 60dvw;
+        height: 60dvw;
+        top: -27%;
+        left: -17%;
+        filter: blur(3rem);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      &::before {
+        width: 50dvw;
+        height: 50dvw;
+        top: -32%;
+        left: -14%;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      &::before {
+        width: 40dvw;
+        height: 40dvw;
+        top: -32%;
+        left: -9%;
+        filter: blur(4rem);
+      }
     }
 
     @media (min-width: 2200px) {
       grid-column: 6 / 13;
+
+      &::before {
+        width: 28dvw;
+        height: 28dvw;
+        top: -38%;
+        left: -10%;
+        filter: blur(6rem);
+      }
     }
   `}
 `
