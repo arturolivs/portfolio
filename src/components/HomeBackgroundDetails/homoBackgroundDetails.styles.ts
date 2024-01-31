@@ -12,7 +12,7 @@ type GeometricShapesProps = {
 export const HomeBackgroundDetails = styled.div`
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100dvh;
   perspective: 500px;
   pointer-events: none;
 `

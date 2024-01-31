@@ -2,8 +2,7 @@ import React from 'react'
 import { useTheme } from 'styled-components'
 
 import { Grid } from '../../components/Grid'
-import HomeBackgroundDetails from '../../components/HomeBackgroundDetails'
-import GitHubLogo from '../../assets/icons/github-logo.svg'
+// import HomeBackgroundDetails from '../../components/HomeBackgroundDetails'
 import LinkedinLogo from '../../assets/icons/linkedin-logo.svg'
 
 import * as S from './home.style'
@@ -14,14 +13,13 @@ const HomeTemplate = () => {
 
   return (
     <S.HomeSection>
-      <HomeBackgroundDetails />
-
+      {/* <HomeBackgroundDetails /> */}
       <Grid>
         <S.SocialLinksSection>
           <S.Link href="https://github.com/arturolivs" target="_blank">
-            <GitHubLogo
-              width={75}
-              height={75}
+            <S.GitHubLogo
+              width={'1.75rem'}
+              height={'1.75rem'}
               color={theme.colors.neutral_white}
             />
           </S.Link>
@@ -31,8 +29,8 @@ const HomeTemplate = () => {
             target="_blank"
           >
             <LinkedinLogo
-              width={75}
-              height={75}
+              width={'1.75rem'}
+              height={'1.75rem'}
               color={theme.colors.neutral_white}
             />
           </S.Link>
