@@ -4,8 +4,8 @@ import { opacify } from '../../theme/utils'
 type GeometricShapesProps = {
   width?: number | string
   height?: number | string
-  top?: number
-  left?: number
+  top?: number | string
+  left?: number | string
   rotate?: number
 }
 
@@ -13,8 +13,9 @@ export const HomeBackgroundDetails = styled.div`
   position: absolute;
   width: 100%;
   height: 100dvh;
-  perspective: 500px;
+  perspective: 700px;
   pointer-events: none;
+  overflow: hidden;
 `
 
 export const HelloWord = styled.span`
@@ -22,7 +23,7 @@ export const HelloWord = styled.span`
     position: absolute;
     font-family: 'Fira Code';
 
-    color: ${opacify(theme.colors.neutral_white, 0.19)};
+    color: ${opacify(theme.colors.neutral_white, 1)};
     font-size: 0.8rem;
     letter-spacing: 0.3rem;
 
@@ -62,12 +63,13 @@ export const GeometricShapes = styled.div`
     rotate = 0,
   }: GeometricShapesProps & { theme: DefaultTheme }) => css`
     position: absolute;
-    border: 1px solid ${opacify(theme.colors.neutral_white, 0.12)};
+    border: 1px solid ${opacify(theme.colors.neutral_white, 1)};
     width: ${width};
     height: ${height};
     top: ${top}%;
     left: ${left}%;
     transform: rotateY(${rotate}deg);
     transition: all 0.4s;
+    color: white;
   `}
 `

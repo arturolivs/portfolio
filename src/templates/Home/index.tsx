@@ -7,9 +7,13 @@ import LinkedinLogo from '../../assets/icons/linkedin-logo.svg'
 
 import * as S from './home.style'
 import HomeScrollIndicator from '../../components/HomeScrollIndicator'
+import useBreakpoint from '../../hooks/useBreakpoint'
 
 const HomeTemplate = () => {
   const theme = useTheme()
+  const { minSM, minMD, minLG, minXL } = useBreakpoint()
+
+  const logoSize = minSM ? 3 : minMD ? 3.5 : minLG ? 4 : minXL ? 4.75 : 1.75
 
   return (
     <S.HomeSection>
@@ -18,8 +22,8 @@ const HomeTemplate = () => {
         <S.SocialLinksSection>
           <S.Link href="https://github.com/arturolivs" target="_blank">
             <S.GitHubLogo
-              width={'1.75rem'}
-              height={'1.75rem'}
+              width={`${logoSize}rem`}
+              height={`${logoSize}rem`}
               color={theme.colors.neutral_white}
             />
           </S.Link>
@@ -29,8 +33,8 @@ const HomeTemplate = () => {
             target="_blank"
           >
             <LinkedinLogo
-              width={'1.75rem'}
-              height={'1.75rem'}
+              width={`${logoSize}rem`}
+              height={`${logoSize}rem`}
               color={theme.colors.neutral_white}
             />
           </S.Link>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import * as S from './homoBackgroundDetails.styles'
 
-const DEGREE_LIMIT = 3
+const DEGREE_LIMIT = 10
 
 const HomeBackgroundDetails = () => {
   const [_, setClientX] = useState(0) //eslint-disable-line
@@ -37,6 +37,36 @@ const HomeBackgroundDetails = () => {
     }
   }, [])
 
+  useEffect(() => {
+    const handleTouchMove = ({ touches }: TouchEvent) => {
+      const clientX = touches[0].clientX
+
+      setClientX((clientXPrev) => {
+        if (clientX < 1) return 0
+
+        const leftDirection = clientXPrev > clientX
+
+        if (leftDirection) {
+          setDeg((prevDeg) =>
+            prevDeg > DEGREE_LIMIT ? DEGREE_LIMIT : ++prevDeg,
+          )
+        } else {
+          setDeg((prevDeg) =>
+            prevDeg < -DEGREE_LIMIT ? -DEGREE_LIMIT : --prevDeg,
+          )
+        }
+
+        return clientX
+      })
+    }
+
+    window.addEventListener('touchmove', handleTouchMove)
+
+    return () => {
+      window.removeEventListener('touchmove', handleTouchMove)
+    }
+  }, [])
+
   return (
     <S.HomeBackgroundDetails>
       <S.HelloWord rotate={deg}>
@@ -57,7 +87,9 @@ const HomeBackgroundDetails = () => {
         top={85}
         left={90}
         rotate={deg}
-      />
+      >
+        asd
+      </S.GeometricShapes>
 
       <S.GeometricShapes
         width="3rem"

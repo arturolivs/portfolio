@@ -28,7 +28,7 @@ export const SocialLinksSection = styled.aside`
   row-gap: 1.5rem;
 
   grid-column: 2 / 3;
-  grid-row: 5 / 13;
+  grid-row: 6 / 13;
 `
 
 export const GitHubLogo = styled(GitHub)``
@@ -55,7 +55,7 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     grid-column: 4 / 13;
-    grid-row: 5 / 12;
+    grid-row: 6 / 12;
 
     position: relative;
 
@@ -106,9 +106,11 @@ export const Content = styled.div`
       }
     }
 
-    @media (min-width: 2200px) {
+    @media (min-width: 1440px) {
       grid-column: 6 / 13;
+    }
 
+    @media (min-width: 2200px) {
       &::before {
         width: 28dvw;
         height: 28dvw;
