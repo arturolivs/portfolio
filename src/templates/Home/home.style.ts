@@ -5,16 +5,16 @@ import Text from '../../components/Text'
 import { opacify } from '../../theme/utils'
 
 export const HomeSection = styled.section`
-  ${({ theme }) => css`
+  ${({ theme: { colors } }) => css`
     width: 100%;
     height: 100dvh;
     background-image: linear-gradient(
-        ${opacify(theme.colors.secondary_500, 0.04)} 1px,
+        ${opacify(colors.secondary_500, 0.04)} 1px,
         transparent 1px
       ),
       linear-gradient(
         90deg,
-        ${opacify(theme.colors.secondary_500, 0.04)} 1px,
+        ${opacify(colors.secondary_500, 0.04)} 1px,
         transparent 1px
       );
 
@@ -34,7 +34,7 @@ export const SocialLinksSection = styled.aside`
 export const GitHubLogo = styled(GitHub)``
 
 export const Link = styled.a`
-  ${({ theme }) => css`
+  ${({ theme: { colors } }) => css`
     cursor: pointer;
     width: fit-content;
 
@@ -44,14 +44,14 @@ export const Link = styled.a`
 
     &:hover {
       svg {
-        color: ${theme.colors.secondary_500};
+        color: ${colors.secondary_500};
       }
     }
   `}
 `
 
 export const Content = styled.div`
-  ${({ theme }) => css`
+  ${({ theme: { colors, breakpoints } }) => css`
     display: flex;
     flex-direction: column;
     grid-column: 4 / 13;
@@ -70,12 +70,12 @@ export const Content = styled.div`
       top: -20%;
       left: -17%;
 
-      background: ${opacify(theme.colors.secondary_500, 0.05)};
+      background: ${opacify(colors.secondary_500, 0.05)};
       filter: blur(2rem);
       pointer-events: none;
     }
 
-    @media (min-width: 768px) {
+    @media (${breakpoints.minSM}) {
       grid-column: 5 / 13;
 
       &::before {
@@ -87,7 +87,7 @@ export const Content = styled.div`
       }
     }
 
-    @media (min-width: 1024px) {
+    @media (${breakpoints.minMD}) {
       &::before {
         width: 50dvw;
         height: 50dvw;
@@ -96,7 +96,9 @@ export const Content = styled.div`
       }
     }
 
-    @media (min-width: 1200px) {
+    @media (${breakpoints.minLG}) {
+      grid-column: 6 / 13;
+
       &::before {
         width: 40dvw;
         height: 40dvw;
@@ -106,11 +108,7 @@ export const Content = styled.div`
       }
     }
 
-    @media (min-width: 1440px) {
-      grid-column: 6 / 13;
-    }
-
-    @media (min-width: 2200px) {
+    @media (${breakpoints.minXL}) {
       &::before {
         width: 28dvw;
         height: 28dvw;
@@ -123,80 +121,80 @@ export const Content = styled.div`
 `
 
 export const Name = styled(Text)`
-  ${({ theme }) => css`
+  ${({ theme: { colors, breakpoints } }) => css`
     font-family: 'Roboto Mono', monospace;
-    color: ${theme.colors.neutral_white};
+    color: ${colors.neutral_white};
     font-size: 1.75rem;
     font-weight: 500;
-    text-shadow: 4px 4px 4px ${opacify(theme.colors.neutral_500, 0.4)};
+    text-shadow: 4px 4px 4px ${opacify(colors.neutral_500, 0.4)};
 
-    @media (min-width: 768px) {
+    @media (${breakpoints.minSM}) {
       font-size: 2.25rem;
     }
 
-    @media (min-width: 1024px) {
+    @media (${breakpoints.minMD}) {
       font-size: 2.5rem;
     }
 
-    @media (min-width: 1200px) {
+    @media (${breakpoints.minLG}) {
       font-size: 3rem;
     }
 
-    @media (min-width: 2200px) {
+    @media (${breakpoints.minXL}) {
       font-size: 3.5rem;
     }
   `}
 `
 
 export const WelcomeText = styled(Text)`
-  ${({ theme }) => css`
+  ${({ theme: { colors, breakpoints } }) => css`
     font-family: 'Fira Code', monospace;
-    color: ${theme.colors.secondary_500};
+    color: ${colors.secondary_500};
     font-weight: 500;
 
     margin-bottom: 0.25rem;
-    text-shadow: 4px 4px 4px ${opacify(theme.colors.neutral_500, 0.4)};
+    text-shadow: 4px 4px 4px ${opacify(colors.neutral_500, 0.4)};
 
-    @media (min-width: 768px) {
+    @media (${breakpoints.minSM}) {
       font-size: 1.25rem;
     }
 
-    @media (min-width: 1024px) {
+    @media (${breakpoints.minMD}) {
       font-size: 1.5rem;
     }
 
-    @media (min-width: 1200px) {
+    @media (${breakpoints.minLG}) {
       font-size: 1.75rem;
     }
 
-    @media (min-width: 2200px) {
+    @media (${breakpoints.minXL}) {
       font-size: 2rem;
     }
   `}
 `
 
 export const Profession = styled(Text)`
-  ${({ theme }) => css`
+  ${({ theme: { colors, breakpoints } }) => css`
     font-family: 'Fira Code', monospace;
-    color: ${theme.colors.secondary_500};
+    color: ${colors.secondary_500};
     font-weight: 500;
 
     padding-top: 1rem;
-    text-shadow: 4px 4px 4px ${opacify(theme.colors.neutral_500, 0.4)};
+    text-shadow: 4px 4px 4px ${opacify(colors.neutral_500, 0.4)};
 
-    @media (min-width: 768px) {
+    @media (${breakpoints.minSM}) {
       font-size: 1.25rem;
     }
 
-    @media (min-width: 1024px) {
+    @media (${breakpoints.minMD}) {
       font-size: 1.5rem;
     }
 
-    @media (min-width: 1200px) {
+    @media (${breakpoints.minLG}) {
       font-size: 1.75rem;
     }
 
-    @media (min-width: 2200px) {
+    @media (${breakpoints.minXL}) {
       font-size: 2rem;
     }
   `}

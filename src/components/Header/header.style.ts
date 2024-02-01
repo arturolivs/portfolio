@@ -24,7 +24,7 @@ export const Header = styled.header`
 `
 
 export const GoToHome = styled.a`
-  ${({ theme }) => css`
+  ${({ theme: { colors } }) => css`
     width: fit-content;
     grid-column: 2 / 2;
 
@@ -34,7 +34,7 @@ export const GoToHome = styled.a`
 
     &:hover {
       svg {
-        color: ${theme.colors.secondary_500};
+        color: ${colors.secondary_500};
       }
     }
   `}
@@ -52,15 +52,15 @@ export const Links = styled.ul`
 export const Item = styled.li``
 
 export const Link = styled.a`
-  ${({ theme }) => css`
+  ${({ theme: { colors } }) => css`
     font-family: 'Roboto Mono';
-    color: ${theme.colors.neutral_100};
+    color: ${colors.neutral_100};
     font-size: 24px;
-    text-shadow: 4px 4px 4px ${opacify(theme.colors.neutral_500, 0.4)};
+    text-shadow: 4px 4px 4px ${opacify(colors.neutral_500, 0.4)};
     transition: color 0.2s;
 
     &:hover {
-      color: ${theme.colors.secondary_500};
+      color: ${colors.secondary_500};
     }
   `}
 `

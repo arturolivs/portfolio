@@ -19,11 +19,17 @@ export const HomeBackgroundDetails = styled.div`
 `
 
 export const HelloWord = styled.span`
-  ${({ theme, rotate = 0 }: { theme: DefaultTheme; rotate?: number }) => css`
+  ${({
+    theme: { colors },
+    rotate = 0,
+  }: {
+    theme: DefaultTheme
+    rotate?: number
+  }) => css`
     position: absolute;
     font-family: 'Fira Code';
 
-    color: ${opacify(theme.colors.neutral_white, 1)};
+    color: ${opacify(colors.neutral_white, 1)};
     font-size: 0.8rem;
     letter-spacing: 0.3rem;
 
@@ -55,7 +61,7 @@ export const HelloWord = styled.span`
 
 export const GeometricShapes = styled.div`
   ${({
-    theme,
+    theme: { colors },
     width = '1rem',
     height = '1rem',
     top = 0,
@@ -63,7 +69,7 @@ export const GeometricShapes = styled.div`
     rotate = 0,
   }: GeometricShapesProps & { theme: DefaultTheme }) => css`
     position: absolute;
-    border: 1px solid ${opacify(theme.colors.neutral_white, 1)};
+    border: 1px solid ${opacify(colors.neutral_white, 1)};
     width: ${width};
     height: ${height};
     top: ${top}%;

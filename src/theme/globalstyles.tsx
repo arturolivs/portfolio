@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyle = createGlobalStyle`
 
 body {
-  background: ${({ theme }) => theme.colors.primary_500};
+  background: ${({ theme: { colors } }) => colors.primary_500};
 }
 
 * {

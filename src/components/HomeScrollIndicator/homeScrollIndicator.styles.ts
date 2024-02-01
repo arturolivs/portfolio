@@ -14,6 +14,7 @@ to {
 `
 
 export const ScrollToContinue = styled.div`
+  ${({ theme: { breakpoints } }) => css`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,7 +43,7 @@ export const ScrollToContinue = styled.div`
     }
   }
 
-  @media (min-width: 1440px) {
+  @media (${breakpoints.minLG}) {
     &:hover {
       span {
         transform: translateX(5rem);
@@ -52,18 +53,18 @@ export const ScrollToContinue = styled.div`
         }
       }
     }
-  }
+  `}
 `
 
 export const ScrollText = styled(Text)`
-  ${({ theme }) => css`
+  ${({ theme: { colors, breakpoints } }) => css`
     position: relative;
     width: 100%;
 
     text-align: center;
     font-family: 'Roboto Mono';
     font-size: 0.8rem;
-    color: ${theme.colors.neutral_100};
+    color: ${colors.neutral_100};
 
     pointer-events: none;
     transition: all 0.5s;
@@ -76,7 +77,7 @@ export const ScrollText = styled(Text)`
       transition: all 0.5s;
     }
 
-    @media (min-width: 1440px) {
+    @media (${breakpoints.minLG}) {
       font-size: 1.2rem;
     }
   `}
@@ -87,10 +88,10 @@ export const ScrollDownIcon = styled(ScrollDown)`
 `
 
 export const Line = styled.div`
-  ${({ theme }) => css`
+  ${({ theme: { colors } }) => css`
     width: 1px;
     height: 80px;
-    background-color: ${theme.colors.neutral_100};
+    background-color: ${colors.neutral_100};
     position: relative;
 
     &::before {
@@ -98,7 +99,7 @@ export const Line = styled.div`
       position: absolute;
       width: 1px;
       height: 0%;
-      background-color: ${theme.colors.primary_500};
+      background-color: ${colors.primary_500};
       transition: all 0.5s;
     }
   `}

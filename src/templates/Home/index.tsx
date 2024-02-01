@@ -11,6 +11,7 @@ import useBreakpoint from '../../hooks/useBreakpoint'
 
 const HomeTemplate = () => {
   const theme = useTheme()
+
   const { minSM, minMD, minLG, minXL } = useBreakpoint()
 
   const logoSize = minSM ? 3 : minMD ? 3.5 : minLG ? 4 : minXL ? 4.75 : 1.75

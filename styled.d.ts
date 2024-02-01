@@ -10,5 +10,11 @@ declare module 'styled-components' {
       neutral_100: string
       neutral_white: string
     }
+    breakpoints: {
+      minSM: string
+      minMD: string
+      minLG: string
+      minXL: string
+    }
   }
 }
