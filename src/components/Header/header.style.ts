@@ -2,25 +2,28 @@ import styled, { css } from 'styled-components'
 import { opacify } from '../../theme/utils'
 
 export const Header = styled.header`
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+  ${({ hidden }) => css`
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    opacity: ${hidden ? 0 : 1};
+    width: 100%;
+    height: 90px;
+    transition: all 0.3s;
 
-  width: 100%;
-  height: 90px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
 
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  align-items: center;
+    background-color: transparent;
 
-  background-color: transparent;
-
-  /**TODO: Aplicar no scroll para cima
+    /**TODO: Aplicar no scroll para cima
     border: 1px solid #1d374a;
     background: linear-gradient(180deg, #042d4d 0%, #08243a 100%);
     box-shadow: 0px 7px 5.3px 0px rgba(0, 0, 0, 0.27);
   */
+  `}
 `
 
 export const GoToHome = styled.a`
