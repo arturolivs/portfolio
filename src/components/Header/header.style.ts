@@ -1,12 +1,18 @@
 import styled, { css } from 'styled-components'
 import { opacify } from '../../theme/utils'
 
-export const Header = styled.header`
-  ${({ hidden }) => css`
+export type HeaderProps = {
+  hidden: boolean
+  showBackground: boolean
+}
+
+export const Header = styled.header<HeaderProps>`
+  ${({ hidden, showBackground }: HeaderProps) => css`
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
+    z-index: 2;
     opacity: ${hidden ? 0 : 1};
     width: 100%;
     height: 90px;
@@ -16,13 +22,12 @@ export const Header = styled.header`
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
 
-    background-color: transparent;
-
-    /**TODO: Aplicar no scroll para cima
-    border: 1px solid #1d374a;
-    background: linear-gradient(180deg, #042d4d 0%, #08243a 100%);
-    box-shadow: 0px 7px 5.3px 0px rgba(0, 0, 0, 0.27);
-  */
+    ${showBackground &&
+    css`
+      border: 1px solid #1d374a;
+      background: linear-gradient(180deg, #042d4d 0%, #08243a 100%);
+      box-shadow: 0px 7px 5.3px 0px rgba(0, 0, 0, 0.27);
+    `}
   `}
 `
 
