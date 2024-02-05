@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import * as S from './homoBackgroundDetails.styles'
+import * as S from './homeBackgroundDetails.styles'
 
 import ApiInterfaceIcon from '../../assets/svg/api-interface.svg'
 import AvailabilityServicesIcon from '../../assets/svg/availability-services.svg'
