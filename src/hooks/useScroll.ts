@@ -7,8 +7,11 @@ const useScroll = () => {
   useEffect(() => {
     const updateScrollPosition = () => {
       const currentScrollPosition = window.scrollY
-      setLastScrollPosition(scrollPosition) // Atualiza a última posição de rolagem antes de mudar a posição atual
-      setScrollPosition(currentScrollPosition)
+
+      setScrollPosition((prev) => {
+        setLastScrollPosition(prev)
+        return currentScrollPosition
+      })
     }
 
     window.addEventListener('scroll', updateScrollPosition)

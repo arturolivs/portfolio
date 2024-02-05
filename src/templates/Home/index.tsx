@@ -2,7 +2,7 @@ import React from 'react'
 import { useTheme } from 'styled-components'
 
 import { Grid } from '../../components/Grid'
-// import HomeBackgroundDetails from '../../components/HomeBackgroundDetails'
+import HomeBackgroundDetails from '../../components/HomeBackgroundDetails'
 import LinkedinLogo from '../../assets/icons/linkedin-logo.svg'
 
 import * as S from './home.style'
@@ -18,7 +18,7 @@ const HomeTemplate = () => {
 
   return (
     <S.HomeSection>
-      {/* <HomeBackgroundDetails /> */}
+      <HomeBackgroundDetails />
       <Grid>
         <S.SocialLinksSection>
           <S.Link href="https://github.com/arturolivs" target="_blank">

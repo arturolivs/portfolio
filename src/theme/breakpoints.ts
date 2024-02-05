@@ -1,7 +1,7 @@
-const SM = 768
-const MD = 1024
-const LG = 1440
-const XL = 2200
+export const SM = 768
+export const MD = 1024
+export const LG = 1440
+export const XL = 2200
 
 export default {
   minSM: `min-width: ${SM}px`,

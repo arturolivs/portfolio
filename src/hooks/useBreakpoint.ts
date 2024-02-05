@@ -1,9 +1,5 @@
 import { useState, useEffect } from 'react'
-
-const SM = 768
-const MD = 1024
-const LG = 1440
-const XL = 2200
+import { SM, MD, LG, XL } from '../theme/breakpoints'
 
 const useBreakpoint = () => {
   const [minSM, setMinSM] = useState(false)

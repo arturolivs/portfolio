@@ -2,9 +2,21 @@ import React, { useState, useEffect } from 'react'
 
 import * as S from './homoBackgroundDetails.styles'
 
-const DEGREE_LIMIT = 10
+import ApiInterfaceIcon from '../../assets/svg/api-interface.svg'
+import AvailabilityServicesIcon from '../../assets/svg/availability-services.svg'
+import SystemSettingsIcon from '../../assets/svg/system-settings.svg'
+import { useTheme } from 'styled-components'
+import { opacify } from '../../theme/utils'
+import useBreakpoint from '../../hooks/useBreakpoint'
+
+const DEGREE_ROTATION_LIMIT = 10
 
 const HomeBackgroundDetails = () => {
+  const theme = useTheme()
+  const { minSM, minMD, minLG, minXL } = useBreakpoint()
+
+  const iconsSize = minSM ? 4 : minMD ? 5 : minLG ? 5 : minXL ? 6 : 3
+
   const [_, setClientX] = useState(0) //eslint-disable-line
 
   const [deg, setDeg] = useState(0)
@@ -18,11 +30,13 @@ const HomeBackgroundDetails = () => {
 
         if (leftDirection) {
           setDeg((prevDeg) =>
-            prevDeg > DEGREE_LIMIT ? DEGREE_LIMIT : ++prevDeg,
+            prevDeg > DEGREE_ROTATION_LIMIT ? DEGREE_ROTATION_LIMIT : ++prevDeg,
           )
         } else {
           setDeg((prevDeg) =>
-            prevDeg < -DEGREE_LIMIT ? -DEGREE_LIMIT : --prevDeg,
+            prevDeg < -DEGREE_ROTATION_LIMIT
+              ? -DEGREE_ROTATION_LIMIT
+              : --prevDeg,
           )
         }
 
@@ -48,11 +62,13 @@ const HomeBackgroundDetails = () => {
 
         if (leftDirection) {
           setDeg((prevDeg) =>
-            prevDeg > DEGREE_LIMIT ? DEGREE_LIMIT : ++prevDeg,
+            prevDeg > DEGREE_ROTATION_LIMIT ? DEGREE_ROTATION_LIMIT : ++prevDeg,
           )
         } else {
           setDeg((prevDeg) =>
-            prevDeg < -DEGREE_LIMIT ? -DEGREE_LIMIT : --prevDeg,
+            prevDeg < -DEGREE_ROTATION_LIMIT
+              ? -DEGREE_ROTATION_LIMIT
+              : --prevDeg,
           )
         }
 
@@ -82,46 +98,46 @@ const HomeBackgroundDetails = () => {
       <S.HelloWord rotate={deg}>alert(&apos;Olá mundo!!&apos;)</S.HelloWord>
 
       <S.GeometricShapes
-        width="5rem"
-        height="5rem"
-        top={85}
-        left={90}
+        width={`${iconsSize}rem`}
+        height={`${iconsSize}rem`}
+        column={2}
+        row={10}
         rotate={deg}
       >
-        asd
+        <ApiInterfaceIcon
+          width={`${iconsSize}rem`}
+          height={`${iconsSize}rem`}
+          color={opacify(theme.colors.neutral_white, 0.1)}
+        />
       </S.GeometricShapes>
 
       <S.GeometricShapes
-        width="3rem"
-        height="5rem"
-        top={15}
-        left={2}
+        width={`${iconsSize}rem`}
+        height={`${iconsSize}rem`}
+        column={10}
+        row={8}
         rotate={deg}
-      />
+      >
+        <AvailabilityServicesIcon
+          width={`${iconsSize}rem`}
+          height={`${iconsSize}rem`}
+          color={opacify(theme.colors.neutral_white, 0.1)}
+        />
+      </S.GeometricShapes>
 
       <S.GeometricShapes
-        width="13rem"
-        height="1px"
-        top={75}
-        left={35}
+        width={`${iconsSize}rem`}
+        height={`${iconsSize}rem`}
+        column={3}
+        row={4}
         rotate={deg}
-      />
-
-      <S.GeometricShapes
-        width="13rem"
-        height="1px"
-        top={30}
-        left={90}
-        rotate={deg}
-      />
-
-      <S.GeometricShapes
-        width="10rem"
-        height="7rem"
-        top={14}
-        left={23}
-        rotate={deg}
-      />
+      >
+        <SystemSettingsIcon
+          width={`${iconsSize}rem`}
+          height={`${iconsSize}rem`}
+          color={opacify(theme.colors.neutral_white, 0.1)}
+        />
+      </S.GeometricShapes>
     </S.HomeBackgroundDetails>
   )
 }

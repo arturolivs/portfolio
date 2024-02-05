@@ -4,78 +4,100 @@ import { opacify } from '../../theme/utils'
 type GeometricShapesProps = {
   width?: number | string
   height?: number | string
-  top?: number | string
-  left?: number | string
+  column?: number
+  row?: number
   rotate?: number
 }
 
 export const HomeBackgroundDetails = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100dvh;
-  perspective: 700px;
-  pointer-events: none;
-  overflow: hidden;
+  ${({ theme: { breakpoints } }) => css`
+    position: absolute;
+    width: 100%;
+    height: 100dvh;
+    perspective: 15rem;
+    pointer-events: none;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    align-items: center;
+
+    @media (${breakpoints.minMD}) {
+      perspective: 70rem;
+    }
+  `}
 `
 
 export const HelloWord = styled.span`
   ${({
-    theme: { colors },
+    theme: { colors, breakpoints },
     rotate = 0,
   }: {
     theme: DefaultTheme
     rotate?: number
   }) => css`
-    position: absolute;
     font-family: 'Fira Code';
-
-    color: ${opacify(colors.neutral_white, 1)};
-    font-size: 0.8rem;
-    letter-spacing: 0.3rem;
+    min-width: max-content;
+    position: absolute;
+    color: ${opacify(colors.neutral_white, 0.2)};
+    font-size: 0.5rem;
+    letter-spacing: 0.2rem;
 
     transition: all 0.4s;
 
     &:nth-child(1) {
-      top: 25%;
-      left: 70%;
       transform: rotateY(${rotate}deg);
+      grid-column: 3 / 4;
+      grid-row: 2 / 3;
     }
 
     &:nth-child(2) {
-      top: 75%;
-      left: 12%;
       transform: rotateY(${rotate}deg);
+      grid-column: 8 / 9;
+      grid-row: 4 / 5;
     }
+
     &:nth-child(3) {
-      top: 80%;
-      left: 60%;
       transform: rotateY(${rotate}deg);
+      grid-column: 3 / 4;
+      grid-row: 9 / 10;
     }
+
     &:nth-child(4) {
-      top: 45%;
-      left: 27%;
       transform: rotateY(${rotate}deg);
+      grid-column: 8 / 9;
+      grid-row: 11 / 11;
+    }
+
+    @media (${breakpoints.minSM}) {
+      perspective: 700rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.3rem;
+    }
+
+    @media (${breakpoints.minXL}) {
+      font-size: 0.9rem;
+      letter-spacing: 0.4rem;
     }
   `}
 `
 
 export const GeometricShapes = styled.div`
   ${({
-    theme: { colors },
     width = '1rem',
     height = '1rem',
-    top = 0,
-    left = 0,
     rotate = 0,
+    column = 0,
+    row = 0,
   }: GeometricShapesProps & { theme: DefaultTheme }) => css`
     position: absolute;
-    border: 1px solid ${opacify(colors.neutral_white, 1)};
     width: ${width};
     height: ${height};
-    top: ${top}%;
-    left: ${left}%;
     transform: rotateY(${rotate}deg);
     transition: all 0.4s;
-    color: white;
+
+    grid-column: ${column} / ${column + 1};
+    grid-row: ${row} / ${row + 1};
   `}
 `
