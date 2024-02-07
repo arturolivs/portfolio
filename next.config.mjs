@@ -1,6 +1,8 @@
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ */
 
-const nextConfig = {
+export default {
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
@@ -33,5 +35,3 @@ const nextConfig = {
     styledComponents: true,
   },
 }
-
-module.exports = nextConfig
