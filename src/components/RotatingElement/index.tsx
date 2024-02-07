@@ -5,14 +5,9 @@ import useMouseRotation from '../../hooks/UseMouseRotation'
 
 const RotatingElement = ({ children, ...rest }: { children: ReactNode }) => {
   const elementRef = useRef(null)
-  const { offsetX, offsetY } = useMouseRotation(elementRef)
+  const { xDeg, yDeg } = useMouseRotation(elementRef)
   return (
-    <S.RotatingElement
-      ref={elementRef}
-      offsetX={offsetX}
-      offsetY={offsetY}
-      {...rest}
-    >
+    <S.RotatingElement ref={elementRef} xDeg={xDeg} yDeg={yDeg} {...rest}>
       {children}
     </S.RotatingElement>
   )
