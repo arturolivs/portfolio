@@ -1,5 +1,6 @@
 import styled, { DefaultTheme, css } from 'styled-components'
 import { opacify } from '../../theme/utils'
+import RotatingElement from '../RotatingElement'
 
 type GeometricShapesProps = {
   width?: number | string
@@ -10,11 +11,10 @@ type GeometricShapesProps = {
 }
 
 export const HomeBackgroundDetails = styled.div`
-  ${({ theme: { breakpoints } }) => css`
+  ${() => css`
     position: absolute;
     width: 100%;
     height: 100dvh;
-    perspective: 15rem;
     pointer-events: none;
     overflow: hidden;
 
@@ -22,17 +22,12 @@ export const HomeBackgroundDetails = styled.div`
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
     align-items: center;
-
-    @media (${breakpoints.minMD}) {
-      perspective: 70rem;
-    }
   `}
 `
 
-export const HelloWord = styled.span`
+export const HelloWord = styled(RotatingElement)`
   ${({
     theme: { colors, breakpoints },
-    rotate = 0,
   }: {
     theme: DefaultTheme
     rotate?: number
@@ -47,31 +42,26 @@ export const HelloWord = styled.span`
     transition: all 0.4s;
 
     &:nth-child(1) {
-      transform: rotateY(${rotate}deg);
       grid-column: 3 / 4;
       grid-row: 2 / 3;
     }
 
     &:nth-child(2) {
-      transform: rotateY(${rotate}deg);
       grid-column: 8 / 9;
       grid-row: 4 / 5;
     }
 
     &:nth-child(3) {
-      transform: rotateY(${rotate}deg);
       grid-column: 3 / 4;
       grid-row: 9 / 10;
     }
 
     &:nth-child(4) {
-      transform: rotateY(${rotate}deg);
       grid-column: 8 / 9;
       grid-row: 11 / 11;
     }
 
     @media (${breakpoints.minSM}) {
-      perspective: 700rem;
       font-size: 0.7rem;
       letter-spacing: 0.3rem;
     }
@@ -83,20 +73,16 @@ export const HelloWord = styled.span`
   `}
 `
 
-export const GeometricShapes = styled.div`
+export const GeometricShapes = styled(RotatingElement)`
   ${({
     width = '1rem',
     height = '1rem',
-    rotate = 0,
     column = 0,
     row = 0,
   }: GeometricShapesProps & { theme: DefaultTheme }) => css`
     position: absolute;
     width: ${width};
     height: ${height};
-    transform: rotateY(${rotate}deg);
-    transition: all 0.4s;
-
     grid-column: ${column} / ${column + 1};
     grid-row: ${row} / ${row + 1};
   `}
