@@ -1,7 +1,7 @@
 import styled, { css, keyframes } from 'styled-components'
 
 import ScrollDown from '../../assets/icons/scroll-down-icon.svg'
-import Text from '../Text'
+import { Span } from '../Text'
 
 const moveDown = keyframes`
 from {
@@ -34,7 +34,7 @@ export const ScrollToContinue = styled.div`
 
       &::before {
         opacity: 1;
-        transform: translateX(-7.8rem);
+        transform: translateX(-8.8rem);
       }
     }
 
@@ -49,14 +49,14 @@ export const ScrollToContinue = styled.div`
         transform: translateX(5rem);
 
         &::before {
-          transform: translateX(-11.8rem);
+          transform: translateX(-12.2rem);
         }
       }
     }
   `}
 `
 
-export const ScrollText = styled(Text)`
+export const ScrollText = styled(Span)`
   ${({ theme: { colors, breakpoints } }) => css`
     position: relative;
     width: 100%;

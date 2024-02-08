@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components'
 
 import GitHub from '../../assets/icons/github-logo.svg'
-import Text from '../../components/Text'
+import { Span, Heading2 } from '../../components/Text'
 import { opacify } from '../../theme/utils'
+import Grid from '../../components/Grid'
 
-export const HomeSection = styled.section`
+export const Home = styled(Grid)`
   ${({ theme: { colors } }) => css`
     width: 100%;
     height: 100dvh;
@@ -120,13 +121,12 @@ export const Content = styled.div`
   `}
 `
 
-export const Name = styled(Text)`
+export const Name = styled(Span)`
   ${({ theme: { colors, breakpoints } }) => css`
     font-family: 'Roboto Mono', monospace;
     color: ${colors.neutral_white};
     font-size: 1.75rem;
     font-weight: 500;
-    text-shadow: 4px 4px 4px ${opacify(colors.neutral_500, 0.4)};
 
     @media (${breakpoints.minSM}) {
       font-size: 2.25rem;
@@ -146,14 +146,10 @@ export const Name = styled(Text)`
   `}
 `
 
-export const WelcomeText = styled(Text)`
-  ${({ theme: { colors, breakpoints } }) => css`
+export const WelcomeText = styled(Heading2)`
+  ${({ theme: { breakpoints } }) => css`
     font-family: 'Fira Code', monospace;
-    color: ${colors.secondary_500};
-    font-weight: 500;
-
     margin-bottom: 0.25rem;
-    text-shadow: 4px 4px 4px ${opacify(colors.neutral_500, 0.4)};
 
     @media (${breakpoints.minSM}) {
       font-size: 1.25rem;
@@ -173,14 +169,12 @@ export const WelcomeText = styled(Text)`
   `}
 `
 
-export const Profession = styled(Text)`
+export const Profession = styled(Span)`
   ${({ theme: { colors, breakpoints } }) => css`
-    font-family: 'Fira Code', monospace;
     color: ${colors.secondary_500};
     font-weight: 500;
 
     padding-top: 1rem;
-    text-shadow: 4px 4px 4px ${opacify(colors.neutral_500, 0.4)};
 
     @media (${breakpoints.minSM}) {
       font-size: 1.25rem;
