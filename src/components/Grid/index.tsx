@@ -1,11 +1,28 @@
-import React from 'react'
+import styled, { css } from 'styled-components'
 
-import * as S from './styles'
-
-export type GridProps = {
-  children: React.ReactNode
+type GridProps = {
+  rows?: number
+  columns?: number
 }
 
-export const Grid = ({ children }: GridProps) => (
-  <S.GridContainer>{children}</S.GridContainer>
-)
+type GridItemProps = {
+  column: number
+  row: number
+  columnSize?: number
+  rowSize?: number
+}
+
+export default styled.div<GridProps>`
+  ${({ rows = 12, columns = 12 }) => css`
+    display: grid;
+    grid-template-rows: repeat(${rows}, 1fr);
+    grid-template-columns: repeat(${columns}, 1fr);
+  `}
+`
+
+export const GridItem = styled.div`
+  ${({ column, row, columnSize = 1, rowSize = 1 }: GridItemProps) => css`
+    grid-column: ${column} / ${column + columnSize};
+    grid-row: ${row} / ${row + rowSize};
+  `}
+`
