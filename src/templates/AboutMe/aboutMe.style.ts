@@ -1,10 +1,23 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Grid, { GridItem } from '../../components/Grid'
-import { Heading1, Heading2, Paragraph } from '../../components/Text'
+import { Heading1, Heading2, Paragraph, Span } from '../../components/Text'
+import { opacify } from '../../theme/utils'
 
 export const AboutMe = styled(Grid)`
   width: 100%;
   height: 100dvh;
+  position: relative;
+  overflow: hidden;
+`
+
+export const BackgroundText = styled(Span)`
+  ${({ theme: { colors } }) => css`
+    position: absolute;
+    color: ${opacify(colors.primary_100, 0.01)};
+    font-family: Tourney;
+    font-size: 25rem;
+    right: 0;
+  `}
 `
 
 export const ImageSection = styled(GridItem)``
