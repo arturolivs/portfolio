@@ -1,5 +1,6 @@
 const primary_palette = {
   primary_500: '#042946',
+  primary_100: '#d9eeff',
 }
 
 const secondary_palette = {
