@@ -1,6 +1,12 @@
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 import Grid, { GridItem } from '../../components/Grid'
-import { Heading1, Heading2, Paragraph, Span } from '../../components/Text'
+import {
+  Heading1,
+  Heading2,
+  Heading3,
+  Paragraph,
+  Span,
+} from '../../components/Text'
 import { opacify } from '../../theme/utils'
 
 export const AboutMe = styled(Grid)`
@@ -17,7 +23,20 @@ export const BackgroundText = styled(Span)`
     font-family: Tourney;
     font-size: 25rem;
     right: 0;
+    animation: ${slideText} 5s infinite;
+    transform: translate(100%, -100%) rotate(-20deg);
+    z-index: -1;
   `}
+`
+
+export const slideText = keyframes`
+  from {
+    transform: translate(100%, -100%) rotate(-20deg);
+  }
+
+  to {
+  transform:  translate(-145%, 240%)  rotate(-20deg);
+  }
 `
 
 export const ImageSection = styled(GridItem)``
@@ -28,15 +47,24 @@ export const TextSection = styled(GridItem)`
 `
 
 export const AboutMeTitle = styled(Heading1)`
-  font-size: 2.5rem;
+  font-size: 3rem;
   align-self: flex-end;
   margin-bottom: 4.5rem;
 `
 
 export const Quote = styled(Heading2)`
-  max-width: 24rem;
-  font-size: 1.5rem;
+  max-width: 32rem;
   margin-bottom: 2rem;
+  position: relative;
+
+  font-size: 2rem;
+  &::before {
+    content: '"';
+    position: absolute;
+    left: -15%;
+    top: -50%;
+    font-size: 10rem;
+  }
 `
 
 export const AboutMeText = styled(Paragraph)`
@@ -44,4 +72,41 @@ export const AboutMeText = styled(Paragraph)`
   font-size: 1.125rem;
 `
 
-export const TechSection = styled(GridItem)``
+export const TechSection = styled(GridItem)`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`
+
+export const TechTitle = styled(Heading3)``
+
+export const Techs = styled.ul`
+  display: flex;
+  column-gap: 2rem;
+`
+
+export const Tech = styled.li`
+  ${({ theme: { colors } }) => css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+
+    svg,
+    span {
+      transition: all 0.2s;
+    }
+
+    &:hover {
+      svg,
+      span {
+        color: ${colors.secondary_500};
+        opacity: 1;
+      }
+    }
+  `}
+`
+
+export const TechLabel = styled(Span)`
+  opacity: 0;
+`
