@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components'
+import styled, { DefaultTheme, css, keyframes } from 'styled-components'
 import Grid, { GridItem } from '../../components/Grid'
 import {
   Heading1,
@@ -40,6 +40,40 @@ export const slideText = keyframes`
 `
 
 export const ImageSection = styled(GridItem)``
+
+type ImageCoverProps = {
+  shadowOffsetX: number
+  shadowOffsetY: number
+  theme: DefaultTheme
+}
+
+export const ImageCover = styled.div`
+  ${({
+    theme: { colors },
+    shadowOffsetX,
+    shadowOffsetY,
+  }: ImageCoverProps) => css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(0deg, #0b395d 15%, ${colors.primary_500} 90%);
+
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    min-width: 60%;
+
+    width: 1rem;
+    border-radius: 60% 60% 60% 60%/40% 40% 40% 40%;
+
+    box-shadow: ${shadowOffsetX}px ${shadowOffsetY}px 0 15px
+      ${colors.secondary_500};
+
+    transition: all 0.2s;
+  `}
+`
 
 export const TextSection = styled(GridItem)`
   display: flex;
