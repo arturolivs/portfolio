@@ -15,7 +15,7 @@ export const Header = styled.header<HeaderProps>`
     z-index: 2;
     opacity: ${hidden ? 0 : 1};
     width: 100%;
-    height: 90px;
+    height: 5rem;
     transition: all 0.3s;
 
     display: grid;

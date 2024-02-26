@@ -3,14 +3,13 @@ import React from 'react'
 import Logo from '../../assets/svg/logo.svg'
 
 import * as S from './header.style'
-import useScroll from '../../hooks/useScroll'
 
-const Header = () => {
-  const { isScrollAtValue, hasScrolledUp } = useScroll()
+type HeaderProps = {
+  hidden: boolean
+  showBackground: boolean
+}
 
-  const hidden = isScrollAtValue(280) && !hasScrolledUp()
-  const showBackground = hasScrolledUp() && isScrollAtValue(280)
-
+const Header = ({ hidden, showBackground }: HeaderProps) => {
   return (
     <S.Header hidden={hidden} showBackground={showBackground}>
       <S.GoToHome href="#">

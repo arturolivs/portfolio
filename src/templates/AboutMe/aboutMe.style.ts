@@ -10,10 +10,8 @@ import {
 import { opacify } from '../../theme/utils'
 
 export const AboutMe = styled(Grid)`
-  width: 100%;
-  height: 100dvh;
+  min-height: 100dvh;
   position: relative;
-  overflow: hidden;
 `
 
 export const BackgroundText = styled(Span)`
@@ -23,7 +21,6 @@ export const BackgroundText = styled(Span)`
     font-family: Tourney;
     font-size: 25rem;
     right: 0;
-    animation: ${slideText} 5s infinite;
     transform: translate(100%, -100%) rotate(-20deg);
     z-index: -1;
   `}
