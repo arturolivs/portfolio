@@ -1,5 +1,5 @@
 import styled, { DefaultTheme, css } from 'styled-components'
-import { opacify } from '../../theme/utils'
+import { colorOpacify } from '../../theme/utils'
 import RotatingElement from '../RotatingElement'
 
 type GeometricShapesProps = {
@@ -35,7 +35,7 @@ export const HelloWord = styled(RotatingElement)`
     font-family: 'Fira Code';
     min-width: max-content;
     position: absolute;
-    color: ${opacify(colors.neutral_white, 0.2)};
+    color: ${colorOpacify(colors.neutral_white, 0.2)};
     font-size: 0.5rem;
     letter-spacing: 0.2rem;
 

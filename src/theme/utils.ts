@@ -1,4 +1,4 @@
-export function opacify(hex_color: string, opacity: number): string {
+export function colorOpacify(hex_color: string, opacity: number): string {
   hex_color = hex_color.slice(1)
   const splitAt = 2
 

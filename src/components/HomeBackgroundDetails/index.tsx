@@ -6,7 +6,7 @@ import ApiInterfaceIcon from '../../assets/svg/api-interface.svg'
 import AvailabilityServicesIcon from '../../assets/svg/availability-services.svg'
 import SystemSettingsIcon from '../../assets/svg/system-settings.svg'
 import { useTheme } from 'styled-components'
-import { opacify } from '../../theme/utils'
+import { colorOpacify } from '../../theme/utils'
 import useBreakpoint from '../../hooks/useBreakpoint'
 
 const HomeBackgroundDetails = () => {
@@ -31,7 +31,7 @@ const HomeBackgroundDetails = () => {
         <ApiInterfaceIcon
           width={`${iconsSize}rem`}
           height={`${iconsSize}rem`}
-          color={opacify(theme.colors.neutral_white, 0.1)}
+          color={colorOpacify(theme.colors.neutral_white, 0.1)}
         />
       </S.GeometricShapes>
 
@@ -44,7 +44,7 @@ const HomeBackgroundDetails = () => {
         <AvailabilityServicesIcon
           width={`${iconsSize}rem`}
           height={`${iconsSize}rem`}
-          color={opacify(theme.colors.neutral_white, 0.1)}
+          color={colorOpacify(theme.colors.neutral_white, 0.1)}
         />
       </S.GeometricShapes>
 
@@ -57,7 +57,7 @@ const HomeBackgroundDetails = () => {
         <SystemSettingsIcon
           width={`${iconsSize}rem`}
           height={`${iconsSize}rem`}
-          color={opacify(theme.colors.neutral_white, 0.1)}
+          color={colorOpacify(theme.colors.neutral_white, 0.1)}
         />
       </S.GeometricShapes>
     </S.HomeBackgroundDetails>
