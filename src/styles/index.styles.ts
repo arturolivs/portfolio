@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { colorOpacify } from '../theme/utils'
 
 export const Main = styled.main`
-  ${({ theme: { colors, breakpoints } }) => css`
+  ${({ theme: { colors } }) => css`
     display: flex;
     flex-direction: column;
     height: 100vh;
