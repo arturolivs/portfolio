@@ -22,7 +22,7 @@ const AboutMeTemplate = () => {
   let shadowOffsetX = elementOffsetX
   let shadowOffsetY = elementOffsetY
 
-  const shadowLimit = 10
+  const shadowLimit = 5
 
   if (shadowOffsetX > shadowLimit) {
     shadowOffsetX = shadowLimit

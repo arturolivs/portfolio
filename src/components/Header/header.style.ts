@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { opacify } from '../../theme/utils'
+import { colorOpacify } from '../../theme/utils'
 
 export type HeaderProps = {
   hidden: boolean
@@ -12,7 +12,7 @@ export const Header = styled.header<HeaderProps>`
     top: 0;
     right: 0;
     left: 0;
-    z-index: 2;
+    z-index: 3;
     opacity: ${hidden ? 0 : 1};
     width: 100%;
     height: 5rem;
@@ -64,7 +64,7 @@ export const Link = styled.a`
     font-family: 'Roboto Mono';
     color: ${colors.neutral_100};
     font-size: 24px;
-    text-shadow: 4px 4px 4px ${opacify(colors.neutral_500, 0.4)};
+    text-shadow: 4px 4px 4px ${colorOpacify(colors.neutral_500, 0.4)};
     transition: color 0.2s;
 
     &:hover {
