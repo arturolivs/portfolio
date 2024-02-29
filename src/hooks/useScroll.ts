@@ -1,43 +1,23 @@
 import { useState, useEffect } from 'react'
 
-type UseScrollProps = {
-  ref?: React.MutableRefObject<HTMLElement>
-}
-
-const useScroll = ({ ref = null }: UseScrollProps) => {
+const useScroll = () => {
   const [scrollPosition, setScrollPosition] = useState(0)
   const [lastScrollPosition, setLastScrollPosition] = useState(0)
 
   useEffect(() => {
     const updateScrollPosition = () => {
-      let currentScrollPosition = 0
-
-      if (ref?.current) {
-        currentScrollPosition = ref.current.scrollTop
-      } else {
-        currentScrollPosition = window.scrollY
-      }
-
       setScrollPosition((prev) => {
         setLastScrollPosition(prev)
-        return currentScrollPosition
+        return window.scrollY
       })
     }
 
-    if (ref?.current) {
-      ref.current.addEventListener('scroll', updateScrollPosition)
-    } else {
-      window.addEventListener('scroll', updateScrollPosition)
-    }
+    window.addEventListener('scroll', updateScrollPosition)
 
     return () => {
-      if (ref?.current) {
-        ref.current.removeEventListener('scroll', updateScrollPosition)
-      } else {
-        window.removeEventListener('scroll', updateScrollPosition)
-      }
+      window.removeEventListener('scroll', updateScrollPosition)
     }
-  }, [ref, scrollPosition])
+  }, [scrollPosition])
 
   const isScrollAtValue = (targetValue) => {
     return scrollPosition >= targetValue

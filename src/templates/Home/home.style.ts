@@ -3,11 +3,38 @@ import styled, { css } from 'styled-components'
 import GitHub from '../../assets/icons/github-logo.svg'
 import { Span, Heading2 } from '../../components/Text'
 import Grid from '../../components/Grid'
+import { colorOpacify } from '../../theme/utils'
 
 export const Home = styled(Grid)`
-  ${() => css`
+  ${({ theme: { colors } }) => css`
     width: 100%;
-    min-height: 100dvh;
+    height: 100dvh;
+    z-index: 2;
+    position: relative;
+    background: radial-gradient(circle, #193c59 0%, #042946 100%);
+
+    box-shadow: 0px 7px 5.3px 0px rgba(0, 0, 0, 0.27);
+
+    ::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      background-image: linear-gradient(
+          ${colorOpacify(colors.secondary_500, 0.04)} 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          ${colorOpacify(colors.secondary_500, 0.04)} 1px,
+          transparent 1px
+        );
+      background-size: 2em 2em;
+    }
   `}
 `
 

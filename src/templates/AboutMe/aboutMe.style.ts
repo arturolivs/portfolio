@@ -7,32 +7,44 @@ import {
   Paragraph,
   Span,
 } from '../../components/Text'
-import { opacify } from '../../theme/utils'
+import { colorOpacify } from '../../theme/utils'
 
 export const AboutMe = styled(Grid)`
-  min-height: 100dvh;
+  height: 100dvh;
   position: relative;
+  overflow: hidden;
+
+  z-index: 1;
+  background: linear-gradient(
+    50deg,
+    rgba(25, 60, 89, 1) 40%,
+    rgba(8, 41, 68, 1) 40%
+  );
+
+  box-shadow: 0px 7px 5.3px 0px rgba(0, 0, 0, 0.27);
 `
 
 export const BackgroundText = styled(Span)`
   ${({ theme: { colors } }) => css`
     position: absolute;
-    color: ${opacify(colors.primary_100, 0.01)};
+    color: ${colorOpacify(colors.primary_100, 0)};
     font-family: Tourney;
     font-size: 25rem;
     right: 0;
-    transform: translate(100%, -100%) rotate(-20deg);
     z-index: -1;
+    transform: translate(100%, -60%) rotate(-12deg);
+
+    /* animation: ${slideText} 9s ease infinite; */
   `}
 `
 
 export const slideText = keyframes`
   from {
-    transform: translate(100%, -100%) rotate(-20deg);
+    transform: translate(100%, -60%) rotate(-12deg);
   }
 
   to {
-  transform:  translate(-145%, 240%)  rotate(-20deg);
+  transform:  translate(-120%,160%) rotate(-20deg);
   }
 `
 
@@ -65,10 +77,10 @@ export const ImageCover = styled.div`
     width: 1rem;
     border-radius: 60% 60% 60% 60%/40% 40% 40% 40%;
 
-    box-shadow: ${shadowOffsetX}px ${shadowOffsetY}px 0 15px
+    box-shadow: ${shadowOffsetX}px ${shadowOffsetY}px 0 0.5rem
       ${colors.secondary_500};
 
-    transition: all 0.2s;
+    transition: box-shadow 0.3s ease;
   `}
 `
 
@@ -78,29 +90,62 @@ export const TextSection = styled(GridItem)`
 `
 
 export const AboutMeTitle = styled(Heading1)`
-  font-size: 3rem;
-  align-self: flex-end;
-  margin-bottom: 4.5rem;
+  ${({ theme: { breakpoints } }) => css`
+    font-size: 2.5rem;
+    align-self: flex-end;
+    margin-bottom: 4.5rem;
+
+    @media (${breakpoints.minSM}) {
+      font-size: 2.75rem;
+    }
+
+    @media (${breakpoints.minLG}) {
+      font-size: 3rem;
+    }
+
+    @media (${breakpoints.minXL}) {
+      font-size: 3.5rem;
+    }
+  `}
 `
 
 export const Quote = styled(Heading2)`
-  max-width: 32rem;
-  margin-bottom: 2rem;
-  position: relative;
+  ${({ theme: { breakpoints } }) => css`
+    max-width: 32rem;
+    margin-bottom: 2rem;
+    position: relative;
+    font-size: 1.5rem;
 
-  font-size: 2rem;
-  &::before {
-    content: '"';
-    position: absolute;
-    left: -15%;
-    top: -50%;
-    font-size: 10rem;
-  }
+    &::before {
+      content: '"';
+      position: absolute;
+      left: -15%;
+      top: -50%;
+      font-size: 10rem;
+    }
+
+    @media (${breakpoints.minLG}) {
+      font-size: 1.8rem;
+    }
+
+    @media (${breakpoints.minXL}) {
+      font-size: 2rem;
+    }
+  `}
 `
 
 export const AboutMeText = styled(Paragraph)`
-  line-height: 1.6rem;
-  font-size: 1.125rem;
+  ${({ theme: { breakpoints } }) => css`
+    line-height: 1.6rem;
+    font-size: 1.125rem;
+
+    @media (${breakpoints.minLG}) {
+      font-size: 1rem;
+    }
+    @media (${breakpoints.minXL}) {
+      font-size: 1.125rem;
+    }
+  `}
 `
 
 export const TechSection = styled(GridItem)`
