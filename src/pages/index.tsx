@@ -1,21 +1,17 @@
 import React from 'react'
 
-import HomeTemplate from '../templates/Home'
-import AboutMeTemplate from '../templates/AboutMe'
 import Header from '../components/Header'
-import MyProjectsTemplate from '../templates/MyProjects'
-
-import * as S from '../styles/index.styles'
+import Home from '../templates/Home'
+import AboutMe from '../templates/AboutMe'
+import MyProjects from '../templates/MyProjects'
 
 export default function Index() {
   return (
     <>
       <Header />
-      <S.Main>
-        <HomeTemplate />
-        <AboutMeTemplate />
-        <MyProjectsTemplate />
-      </S.Main>
+      <Home />
+      <AboutMe />
+      <MyProjects />
     </>
   )
 }

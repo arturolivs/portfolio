@@ -13,7 +13,7 @@ export const AboutMe = styled(Grid)`
   height: 100dvh;
   position: relative;
   z-index: 1;
-  scroll-snap-align: center;
+  overflow-x: hidden;
 
   background: linear-gradient(
     50deg,
