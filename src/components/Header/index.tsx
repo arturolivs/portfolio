@@ -6,7 +6,7 @@ import * as S from './header.style'
 import useScroll from '../../hooks/useScroll'
 
 const Header = () => {
-  const { isScrollAtValue, hasScrolledUp } = useScroll()
+  const { isScrollAtValue, hasScrolledUp } = useScroll({})
 
   const hidden = isScrollAtValue(280) && !hasScrolledUp()
   const showBackground = hasScrolledUp() && isScrollAtValue(280)

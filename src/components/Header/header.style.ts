@@ -24,7 +24,7 @@ export const Header = styled.header<HeaderProps>`
 
     ${showBackground &&
     css`
-      border: 1px solid #1d374a;
+      border-bottom: 1px solid #042d4d;
       background: linear-gradient(180deg, #042d4d 0%, #08243a 100%);
       box-shadow: 0px 7px 5.3px 0px rgba(0, 0, 0, 0.27);
     `}

@@ -5,7 +5,7 @@ type MouseState = {
   elementOffsetY?: number
 }
 
-function getElementCenterAxis(element: HTMLInputElement) {
+function getElementCenterAxis(element: HTMLElement) {
   const rect = element.getBoundingClientRect()
   const centerX = rect.left + rect.width / 2
   const centerY = rect.top + rect.height / 2
@@ -13,7 +13,7 @@ function getElementCenterAxis(element: HTMLInputElement) {
   return { centerX, centerY }
 }
 
-const useMouse = (ref: React.MutableRefObject<HTMLInputElement>) => {
+const useMouse = (ref: React.MutableRefObject<HTMLElement>) => {
   const [state, setState] = useState<MouseState>({})
 
   useEffect(() => {

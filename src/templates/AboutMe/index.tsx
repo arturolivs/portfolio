@@ -13,12 +13,30 @@ import CssLogo from '../../assets/icons/css-logo.svg'
 import ReactLogo from '../../assets/icons/react-logo.svg'
 import NextLogo from '../../assets/icons/nextjs-logo.svg'
 import useMouse from '../../hooks/useMouse'
+import useScroll from '../../hooks/useScroll'
 
 const AboutMeTemplate = () => {
-  const { colors } = useTheme()
+  const imageCoverRef = useRef<HTMLInputElement>(null)
+  const aboutMeRef = useRef<HTMLInputElement>(null)
 
-  const ref = useRef<HTMLInputElement>(null)
-  const { elementOffsetX, elementOffsetY } = useMouse(ref)
+  const { colors } = useTheme()
+  const { elementOffsetX, elementOffsetY } = useMouse(imageCoverRef)
+  const { scrollToElement, hasScrolledUp } = useScroll({
+    ref: aboutMeRef,
+  })
+
+  React.useEffect(() => {
+    const aboutMeTopPosition = aboutMeRef.current.getBoundingClientRect().top
+
+    if (
+      aboutMeTopPosition > 0 &&
+      aboutMeTopPosition < 150 &&
+      !hasScrolledUp()
+    ) {
+      scrollToElement(50)
+    }
+  }, [scrollToElement, hasScrolledUp])
+
   let shadowOffsetX = elementOffsetX
   let shadowOffsetY = elementOffsetY
 
@@ -40,12 +58,12 @@ const AboutMeTemplate = () => {
     shadowOffsetY = -shadowLimit
   }
 
+  // <S.BackgroundText>Sobre mim</S.BackgroundText>
   return (
-    <S.AboutMe as="section" rows={12} columns={12}>
-      <S.BackgroundText>Sobre mim</S.BackgroundText>
+    <S.AboutMe ref={aboutMeRef} as="section" rows={12} columns={12}>
       <S.ImageSection row={3} column={3} columnSize={4} rowSize={8}>
         <S.ImageCover
-          ref={ref}
+          ref={imageCoverRef}
           shadowOffsetX={shadowOffsetX}
           shadowOffsetY={-shadowOffsetY}
         >

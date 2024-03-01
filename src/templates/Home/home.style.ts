@@ -12,7 +12,7 @@ export const Home = styled(Grid)`
     z-index: 2;
     position: relative;
     background: radial-gradient(circle, #193c59 0%, #042946 100%);
-
+    border-bottom: 3px solid ${colorOpacify('#042946', 0.5)};
     box-shadow: 0px 7px 5.3px 0px rgba(0, 0, 0, 0.27);
 
     ::before {
