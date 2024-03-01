@@ -12,9 +12,9 @@ import { colorOpacify } from '../../theme/utils'
 export const AboutMe = styled(Grid)`
   height: 100dvh;
   position: relative;
-  overflow: hidden;
-
   z-index: 1;
+  scroll-snap-align: center;
+
   background: linear-gradient(
     50deg,
     rgba(25, 60, 89, 1) 40%,

@@ -42,7 +42,7 @@ const AboutMeTemplate = () => {
 
   return (
     <S.AboutMe as="section" rows={12} columns={12}>
-      <S.BackgroundText>Sobre mim</S.BackgroundText>
+      {/* <S.BackgroundText>Sobre mim</S.BackgroundText> */}
       <S.ImageSection row={3} column={3} columnSize={4} rowSize={8}>
         <S.ImageCover
           ref={ref}

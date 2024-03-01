@@ -11,6 +11,7 @@ export const Home = styled(Grid)`
     height: 100dvh;
     z-index: 2;
     position: relative;
+    scroll-snap-align: center;
     background: radial-gradient(circle, #193c59 0%, #042946 100%);
 
     box-shadow: 0px 7px 5.3px 0px rgba(0, 0, 0, 0.27);
