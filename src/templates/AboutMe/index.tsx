@@ -14,12 +14,24 @@ import ReactLogo from '../../assets/icons/react-logo.svg'
 import NextLogo from '../../assets/icons/nextjs-logo.svg'
 import useMouse from '../../hooks/useMouse'
 import useScroll from '../../hooks/useScroll'
+import useBreakpoint from '../../hooks/useBreakpoint'
 
 const AboutMeTemplate = () => {
   const imageCoverRef = useRef<HTMLInputElement>(null)
   const aboutMeRef = useRef<HTMLInputElement>(null)
-
   const { colors } = useTheme()
+  const { minSM, minMD, minLG, minXL } = useBreakpoint()
+
+  const iconsSize = minSM
+    ? 2.875
+    : minMD
+    ? 2.5
+    : minLG
+    ? 3.125
+    : minXL
+    ? 3.75
+    : 1.875
+
   const { elementOffsetX, elementOffsetY } = useMouse(imageCoverRef)
   const { scrollToElement, hasScrolledUp } = useScroll({
     ref: aboutMeRef,
@@ -61,7 +73,16 @@ const AboutMeTemplate = () => {
   // <S.BackgroundText>Sobre mim</S.BackgroundText>
   return (
     <S.AboutMe ref={aboutMeRef} as="section" rows={12} columns={12}>
-      <S.ImageSection row={3} column={3} columnSize={4} rowSize={8}>
+      <S.AboutMeTitle as="h1" row={3} column={minXL ? 10 : 11}>
+        Sobre mim
+      </S.AboutMeTitle>
+
+      <S.ImageSection
+        row={minMD ? 4 : 3}
+        column={minXL ? 3 : 2}
+        rowSize={8}
+        columnSize={minXL ? 3 : 4}
+      >
         <S.ImageCover
           ref={imageCoverRef}
           shadowOffsetX={shadowOffsetX}
@@ -77,9 +98,12 @@ const AboutMeTemplate = () => {
         </S.ImageCover>
       </S.ImageSection>
 
-      <S.TextSection row={3} column={7} columnSize={4} rowSize={6}>
-        <S.AboutMeTitle>Sobre mim</S.AboutMeTitle>
-
+      <S.TextSection
+        row={4}
+        column={minMD ? 9 : minXL ? 7 : 8}
+        columnSize={minMD ? 3 : 4}
+        rowSize={5}
+      >
         <S.Quote>
           Criando soluções digitais, transformo suas ideias em realidade
         </S.Quote>
@@ -95,67 +119,67 @@ const AboutMeTemplate = () => {
         </S.AboutMeText>
       </S.TextSection>
 
-      <S.TechSection row={10} column={7} columnSize={4}>
+      <S.TechSection row={10} column={7} columnSize={minXL ? 4 : 5}>
         <S.TechTitle>Principais tecnologias</S.TechTitle>
         <S.Techs>
-          <S.Tech>
+          <S.Tech maxWidth={iconsSize}>
             <NodeLogo
-              width={`${3.75}rem`}
-              height={`${3.75}rem`}
+              width={`${iconsSize}rem`}
+              height={`${iconsSize}rem`}
               color={colors.neutral_100}
             />
             <S.TechLabel>NodeJS</S.TechLabel>
           </S.Tech>
 
-          <S.Tech>
+          <S.Tech maxWidth={iconsSize}>
             <TSLogo
-              width={`${3.75}rem`}
-              height={`${3.75}rem`}
+              width={`${iconsSize}rem`}
+              height={`${iconsSize}rem`}
               color={colors.neutral_100}
             />
             <S.TechLabel>Typescript</S.TechLabel>
           </S.Tech>
 
-          <S.Tech>
+          <S.Tech maxWidth={iconsSize}>
             <JavaLogo
-              width={`${3.75}rem`}
-              height={`${3.75}rem`}
+              width={`${iconsSize}rem`}
+              height={`${iconsSize}rem`}
               color={colors.neutral_100}
             />
             <S.TechLabel>Java</S.TechLabel>
           </S.Tech>
 
-          <S.Tech>
+          <S.Tech maxWidth={iconsSize}>
             <HtmlLogo
-              width={`${3.75}rem`}
-              height={`${3.75}rem`}
+              width={`${iconsSize}rem`}
+              height={`${iconsSize}rem`}
               color={colors.neutral_100}
             />
             <S.TechLabel>HTML5</S.TechLabel>
           </S.Tech>
 
-          <S.Tech>
+          <S.Tech maxWidth={iconsSize}>
             <CssLogo
-              width={`${3.75}rem`}
-              height={`${3.75}rem`}
+              width={`${iconsSize}rem`}
+              height={`${iconsSize}rem`}
               color={colors.neutral_100}
             />
             <S.TechLabel>CSS3</S.TechLabel>
           </S.Tech>
 
-          <S.Tech>
+          <S.Tech maxWidth={iconsSize}>
             <ReactLogo
-              width={`${3.75}rem`}
-              height={`${3.75}rem`}
+              width={`${iconsSize}rem`}
+              height={`${iconsSize}rem`}
               color={colors.neutral_100}
             />
             <S.TechLabel>React</S.TechLabel>
           </S.Tech>
 
-          <S.Tech>
+          <S.Tech maxWidth={iconsSize}>
             <NextLogo
-              width={`${3.75}rem`}
-              height={`${3.75}rem`}
+              width={`${iconsSize}rem`}
+              height={`${iconsSize}rem`}
               color={colors.neutral_100}
             />
             <S.TechLabel>NextJS</S.TechLabel>

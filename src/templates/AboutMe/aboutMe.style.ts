@@ -1,12 +1,6 @@
 import styled, { DefaultTheme, css, keyframes } from 'styled-components'
 import Grid, { GridItem } from '../../components/Grid'
-import {
-  Heading1,
-  Heading2,
-  Heading3,
-  Paragraph,
-  Span,
-} from '../../components/Text'
+import { Heading2, Heading3, Paragraph, Span } from '../../components/Text'
 import { colorOpacify } from '../../theme/utils'
 
 export const AboutMe = styled(Grid)`
@@ -58,7 +52,7 @@ type ImageCoverProps = {
 
 export const ImageCover = styled.div`
   ${({
-    theme: { colors },
+    theme: { colors, breakpoints },
     shadowOffsetX,
     shadowOffsetY,
   }: ImageCoverProps) => css`
@@ -71,16 +65,23 @@ export const ImageCover = styled.div`
 
     background-size: cover;
     background-position: center;
-    height: 100%;
-    min-width: 60%;
+    aspect-ratio: 0.71 / 1;
 
-    width: 1rem;
     border-radius: 60% 60% 60% 60%/40% 40% 40% 40%;
 
     box-shadow: ${shadowOffsetX}px ${shadowOffsetY}px 0 0.5rem
       ${colors.secondary_500};
 
     transition: box-shadow 0.3s ease;
+    height: 100%;
+
+    @media (${breakpoints.minSM}) {
+      height: 85%;
+    }
+
+    @media (${breakpoints.minLG}) {
+      height: 100%;
+    }
   `}
 `
 
@@ -89,8 +90,13 @@ export const TextSection = styled(GridItem)`
   flex-direction: column;
 `
 
-export const AboutMeTitle = styled(Heading1)`
-  ${({ theme: { breakpoints } }) => css`
+export const AboutMeTitle = styled(GridItem)`
+  ${({ theme: { breakpoints, colors } }) => css`
+    font-family: 'Roboto Mono';
+    color: ${colors.neutral_100};
+    text-shadow: 4px 4px 4px ${colorOpacify(colors.neutral_500, 0.4)};
+
+    width: max-content;
     font-size: 2.5rem;
     align-self: flex-end;
     margin-bottom: 4.5rem;
@@ -139,9 +145,14 @@ export const AboutMeText = styled(Paragraph)`
     line-height: 1.6rem;
     font-size: 1.125rem;
 
+    @media (${breakpoints.minMD}) {
+      font-size: 13px;
+    }
+
     @media (${breakpoints.minLG}) {
       font-size: 1rem;
     }
+
     @media (${breakpoints.minXL}) {
       font-size: 1.125rem;
     }
@@ -152,22 +163,25 @@ export const TechSection = styled(GridItem)`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  margin-top: 4rem;
 `
 
 export const TechTitle = styled(Heading3)``
 
 export const Techs = styled.ul`
   display: flex;
-  column-gap: 2rem;
+  column-gap: 1rem;
 `
 
+type TechProps = { maxWidth?: number; theme: DefaultTheme }
+
 export const Tech = styled.li`
-  ${({ theme: { colors } }) => css`
+  ${({ theme: { colors }, maxWidth = 3 }: TechProps) => css`
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 1rem;
-
+    max-width: ${maxWidth}rem;
     svg,
     span {
       transition: all 0.2s;
