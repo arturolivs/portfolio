@@ -11,9 +11,9 @@ import useBreakpoint from '../../hooks/useBreakpoint'
 
 const HomeBackgroundDetails = () => {
   const theme = useTheme()
-  const { minSM, minMD, minLG, minXL } = useBreakpoint()
+  const { minSM, minMD, minXL } = useBreakpoint()
 
-  const iconsSize = minSM ? 4 : minMD ? 5 : minLG ? 5 : minXL ? 6 : 3
+  const iconsSize = minSM ? 4 : minMD ? 5 : minXL ? 6 : 3
 
   return (
     <S.HomeBackgroundDetails>

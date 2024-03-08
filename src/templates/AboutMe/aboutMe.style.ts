@@ -42,7 +42,11 @@ export const slideText = keyframes`
   }
 `
 
-export const ImageSection = styled(GridItem)``
+export const ImageSection = styled(GridItem)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
 type ImageCoverProps = {
   shadowOffsetX: number
@@ -73,10 +77,10 @@ export const ImageCover = styled.div`
       ${colors.secondary_500};
 
     transition: box-shadow 0.3s ease;
-    height: 100%;
+    height: 300%;
 
     @media (${breakpoints.minSM}) {
-      height: 85%;
+      height: 80%;
     }
 
     @media (${breakpoints.minLG}) {

@@ -9,14 +9,15 @@ const useBreakpoint = () => {
 
   useEffect(() => {
     const checkSize = () => {
-      setMinSM(window.innerWidth >= SM && window.innerWidth < MD)
-      setMinMD(window.innerWidth >= MD && window.innerWidth < LG)
-      setMinLG(window.innerWidth >= LG && window.innerWidth < XL)
+      // Verifica se a largura da janela é maior ou igual a cada breakpoint
+      setMinSM(window.innerWidth >= SM)
+      setMinMD(window.innerWidth >= MD)
+      setMinLG(window.innerWidth >= LG)
       setMinXL(window.innerWidth >= XL)
     }
 
     window.addEventListener('resize', checkSize)
-    checkSize()
+    checkSize() // Chama a função inicialmente para definir os estados corretos
 
     return () => {
       window.removeEventListener('resize', checkSize)
