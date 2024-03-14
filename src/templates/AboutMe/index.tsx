@@ -58,33 +58,36 @@ const AboutMeTemplate = () => {
 
   // <S.BackgroundText>Sobre mim</S.BackgroundText>
   return (
-    <S.AboutMe ref={aboutMeRef} as="section" rows={12} columns={12}>
-      <S.AboutMeTitle as="h1" row={3} column={minXL ? 10 : 11}>
+    <S.AboutMe
+      ref={aboutMeRef}
+      as="section"
+      rows={minMD ? 12 : 4}
+      columns={minMD ? 12 : 3}
+    >
+      <S.AboutMeTitle as="h1" row={3} column={minMD ? 11 : minXL ? 10 : 2}>
         Sobre mim
       </S.AboutMeTitle>
 
-      {true && (
-        <S.ImageSection
-          row={minMD ? 3 : 4}
-          rowSize={minMD ? 8 : 6}
-          column={minXL ? 3 : 2}
-          columnSize={minMD ? 4 : minXL ? 3 : 10}
+      <S.ImageSection
+        row={minMD ? 3 : 4}
+        rowSize={minMD ? 8 : 6}
+        column={minXL ? 3 : 2}
+        columnSize={minMD ? 4 : minXL ? 3 : 10}
+      >
+        <S.ImageCover
+          ref={imageCoverRef}
+          shadowOffsetX={shadowOffsetX}
+          shadowOffsetY={-shadowOffsetY}
         >
-          <S.ImageCover
-            ref={imageCoverRef}
-            shadowOffsetX={shadowOffsetX}
-            shadowOffsetY={-shadowOffsetY}
-          >
-            <Image
-              src="/img/hero.png"
-              alt="Descrição da Imagem"
-              width={854}
-              height={605}
-              layout="responsive"
-            />
-          </S.ImageCover>
-        </S.ImageSection>
-      )}
+          <Image
+            src="/img/hero.png"
+            alt="Descrição da Imagem"
+            width={854}
+            height={605}
+            layout="responsive"
+          />
+        </S.ImageCover>
+      </S.ImageSection>
 
       <S.TextSection
         row={minMD ? 4 : 10}

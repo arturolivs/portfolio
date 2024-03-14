@@ -21,12 +21,17 @@ export const slideText = keyframes`
 
 export const AboutMe = styled(Grid)`
   ${({ theme: { breakpoints } }) => css`
-    height: 150dvh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 3rem;
+
     position: relative;
     z-index: 1;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
 
     @media (${breakpoints.minMD}) {
+      display: grid;
+      padding: 0;
       height: 100dvh;
     }
 
