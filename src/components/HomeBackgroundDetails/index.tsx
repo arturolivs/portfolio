@@ -13,7 +13,7 @@ const HomeBackgroundDetails = () => {
   const theme = useTheme()
   const { minSM, minMD, minXL } = useBreakpoint()
 
-  const iconsSize = minSM ? 4 : minMD ? 5 : minXL ? 6 : 3
+  const iconsSize = minXL ? 6 : minMD ? 5 : minSM ? 4 : 3
 
   return (
     <S.HomeBackgroundDetails>

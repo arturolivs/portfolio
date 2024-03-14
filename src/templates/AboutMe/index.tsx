@@ -64,15 +64,15 @@ const AboutMeTemplate = () => {
       rows={minMD ? 12 : 4}
       columns={minMD ? 12 : 3}
     >
-      <S.AboutMeTitle as="h1" row={3} column={minMD ? 11 : minXL ? 10 : 2}>
+      <S.AboutMeTitle as="h1" row={3} column={minXL ? 10 : minMD ? 11 : 2}>
         Sobre mim
       </S.AboutMeTitle>
 
       <S.ImageSection
-        row={minMD ? 3 : 4}
+        row={4}
         rowSize={minMD ? 8 : 6}
         column={minXL ? 3 : 2}
-        columnSize={minMD ? 4 : minXL ? 3 : 10}
+        columnSize={minXL ? 3 : minMD ? 4 : 10}
       >
         <S.ImageCover
           ref={imageCoverRef}

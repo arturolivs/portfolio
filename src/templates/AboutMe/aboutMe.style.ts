@@ -64,11 +64,9 @@ export const ImageSection = styled(GridItem)`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: min-content;
 
     @media (${breakpoints.minMD}) {
       width: fit-content;
-      height: auto;
     }
   `}
 `
@@ -96,16 +94,15 @@ export const ImageCover = styled.div`
       ${colors.secondary_500};
 
     transition: box-shadow 0.3s ease;
-    height: 100%;
     width: 75%;
 
-    @media (${breakpoints.minMD}) {
-      width: 100%;
-      height: 75%;
+    @media (${breakpoints.minSM}) {
+      width: 40%;
     }
 
-    @media (${breakpoints.minLG}) {
+    @media (${breakpoints.minMD}) {
       height: 100%;
+      width: auto;
     }
   `}
 `
@@ -114,10 +111,12 @@ export const TextSection = styled(GridItem)`
   ${({ theme: { breakpoints } }) => css`
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-top: 3rem;
 
     @media (${breakpoints.minMD}) {
       margin-top: 0;
+      align-items: flex-start;
     }
   `}
 `
