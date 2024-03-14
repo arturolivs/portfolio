@@ -3,19 +3,41 @@ import Grid, { GridItem } from '../../components/Grid'
 import { Heading2, Heading3, Paragraph, Span } from '../../components/Text'
 import { colorOpacify } from '../../theme/utils'
 
+type ImageCoverProps = {
+  shadowOffsetX: number
+  shadowOffsetY: number
+  theme: DefaultTheme
+}
+
+export const slideText = keyframes`
+  from {
+    transform: translate(100%, -60%) rotate(-12deg);
+  }
+
+  to {
+    transform: translate(-120%, 160%) rotate(-20deg);
+  }
+`
+
 export const AboutMe = styled(Grid)`
-  height: 100dvh;
-  position: relative;
-  z-index: 1;
-  /* overflow-x: hidden; */
+  ${({ theme: { breakpoints } }) => css`
+    height: 150dvh;
+    position: relative;
+    z-index: 1;
+    /* overflow-x: hidden; */
 
-  background: linear-gradient(
-    50deg,
-    rgba(25, 60, 89, 1) 40%,
-    rgba(8, 41, 68, 1) 40%
-  );
+    @media (${breakpoints.minMD}) {
+      height: 100dvh;
+    }
 
-  box-shadow: 0px 7px 5.3px 0px rgba(0, 0, 0, 0.27);
+    background: linear-gradient(
+      50deg,
+      rgba(25, 60, 89, 1) 40%,
+      rgba(8, 41, 68, 1) 40%
+    );
+
+    box-shadow: 0px 7px 5.3px 0px rgba(0, 0, 0, 0.27);
+  `}
 `
 
 export const BackgroundText = styled(Span)`
@@ -32,27 +54,19 @@ export const BackgroundText = styled(Span)`
   `}
 `
 
-export const slideText = keyframes`
-  from {
-    transform: translate(100%, -60%) rotate(-12deg);
-  }
-
-  to {
-  transform:  translate(-120%,160%) rotate(-20deg);
-  }
-`
-
 export const ImageSection = styled(GridItem)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
+  ${({ theme: { breakpoints } }) => css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: min-content;
 
-type ImageCoverProps = {
-  shadowOffsetX: number
-  shadowOffsetY: number
-  theme: DefaultTheme
-}
+    @media (${breakpoints.minMD}) {
+      width: fit-content;
+      height: auto;
+    }
+  `}
+`
 
 export const ImageCover = styled.div`
   ${({
@@ -77,10 +91,12 @@ export const ImageCover = styled.div`
       ${colors.secondary_500};
 
     transition: box-shadow 0.3s ease;
-    height: 300%;
+    height: 100%;
+    width: 75%;
 
-    @media (${breakpoints.minSM}) {
-      height: 80%;
+    @media (${breakpoints.minMD}) {
+      width: 100%;
+      height: 75%;
     }
 
     @media (${breakpoints.minLG}) {
@@ -90,8 +106,15 @@ export const ImageCover = styled.div`
 `
 
 export const TextSection = styled(GridItem)`
-  display: flex;
-  flex-direction: column;
+  ${({ theme: { breakpoints } }) => css`
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+
+    @media (${breakpoints.minMD}) {
+      margin-top: 0;
+    }
+  `}
 `
 
 export const AboutMeTitle = styled(GridItem)`
@@ -103,13 +126,15 @@ export const AboutMeTitle = styled(GridItem)`
     width: max-content;
     font-size: 2.5rem;
     align-self: flex-end;
-    margin-bottom: 4.5rem;
+    margin: 4.5rem 0;
 
     @media (${breakpoints.minSM}) {
       font-size: 2.75rem;
     }
 
     @media (${breakpoints.minLG}) {
+      margin: 0;
+      margin-bottom: 4.5rem;
       font-size: 3rem;
     }
 

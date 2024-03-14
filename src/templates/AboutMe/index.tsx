@@ -12,7 +12,6 @@ import HtmlLogo from '../../assets/icons/html-logo.svg'
 import CssLogo from '../../assets/icons/css-logo.svg'
 import ReactLogo from '../../assets/icons/react-logo.svg'
 import NextLogo from '../../assets/icons/nextjs-logo.svg'
-import useMouse from '../../hooks/useMouse'
 import useBreakpoint from '../../hooks/useBreakpoint'
 
 const AboutMeTemplate = () => {
@@ -109,7 +108,7 @@ const AboutMeTemplate = () => {
       </S.TextSection>
 
       <S.TechSection
-        row={minMD ? 10 : 11}
+        row={11}
         column={minXL ? 8 : minMD ? 9 : 2}
         columnSize={minMD ? 3 : 10}
       >

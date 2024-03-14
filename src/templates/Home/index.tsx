@@ -12,7 +12,7 @@ const HomeTemplate = () => {
 
   const { minSM, minMD, minLG, minXL } = useBreakpoint()
 
-  const logoSize = minSM ? 3 : minMD ? 3.5 : minLG ? 4 : minXL ? 4.75 : 1.75
+  const logoSize = minXL ? 5.5 : minLG ? 4 : minMD ? 3.5 : minSM ? 3 : 1.75
 
   return (
     <S.Home as="section">

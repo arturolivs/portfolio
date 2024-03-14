@@ -15,9 +15,10 @@ type GridItemProps = {
 export default styled.div<GridProps>`
   ${({ rows = 12, columns = 12 }) => css`
     display: grid;
+
     grid-template-rows: repeat(${rows}, 1fr);
     grid-template-columns: repeat(${columns}, 1fr);
-    grid-auto-rows: min-content;
+    /* grid-auto-rows: min-content; */
   `}
 `
 
