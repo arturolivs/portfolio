@@ -15,9 +15,9 @@ const HomeTemplate = () => {
   const logoSize = minXL ? 5.5 : minLG ? 4 : minMD ? 3.5 : minSM ? 3 : 1.75
 
   return (
-    <S.Home as="section">
+    <S.Home as="section" rows={['1fr', '20dvh']} columns={2}>
       {/* <HomeBackgroundDetails /> */}
-      <S.SocialLinksSection>
+      <S.SocialLinksSection row={1} column={1} rowSize={2}>
         <S.Link href="https://github.com/arturolivs" target="_blank">
           <S.GitHubLogo
             width={`${logoSize}rem`}
@@ -38,7 +38,7 @@ const HomeTemplate = () => {
         </S.Link>
       </S.SocialLinksSection>
 
-      <S.Content>
+      <S.Content row={1} column={1} columnSize={2} rowSize={2}>
         <S.WelcomeText>Olá, meu nome é</S.WelcomeText>
 
         <S.Name as="h1">

@@ -7,7 +7,7 @@ const HomeScrollIndicator = () => {
   const theme = useTheme()
 
   return (
-    <S.ScrollToContinue>
+    <S.ScrollToContinue row={2} column={1} columnSize={2}>
       <S.ScrollText>Continuar..</S.ScrollText>
       <S.ScrollDownIcon
         width={24}

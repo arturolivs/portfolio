@@ -20,18 +20,19 @@ export const slideText = keyframes`
 `
 
 export const AboutMe = styled(Grid)`
-  ${({ theme: { breakpoints } }) => css`
-    display: flex;
-    flex-direction: column;
-    padding: 0 10dvw;
-
+  ${({ theme: { medias } }) => css`
     position: relative;
     z-index: 1;
     overflow-x: hidden;
+    padding: 0 10dvw;
+    height: 100dvh;
 
-    @media (${breakpoints.minMD}) {
-      display: grid;
-      height: 100dvh;
+    ${medias.mobile} {
+      display: flex;
+      flex-direction: column;
+      overflow-x: initial;
+      height: auto;
+      padding-bottom: 5dvw;
     }
 
     background: linear-gradient(
@@ -59,9 +60,15 @@ export const BackgroundText = styled(Span)`
 `
 
 export const ImageSection = styled(GridItem)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${({ theme: { breakpoints } }) => css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (${breakpoints.minMD}) {
+      justify-content: flex-start;
+    }
+  `}
 `
 
 export const ImageCover = styled.div`

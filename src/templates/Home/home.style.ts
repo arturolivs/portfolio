@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 import GitHub from '../../assets/icons/github-logo.svg'
 import { Span, Heading2 } from '../../components/Text'
-import Grid from '../../components/Grid'
+import Grid, { GridItem } from '../../components/Grid'
 import { colorOpacify } from '../../theme/utils'
 
 export const Home = styled(Grid)`
@@ -38,13 +38,18 @@ export const Home = styled(Grid)`
   `}
 `
 
-export const SocialLinksSection = styled.aside`
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.5rem;
+export const SocialLinksSection = styled(GridItem)`
+  ${({ theme: { medias } }) => css`
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    row-gap: 1.5rem;
+    padding-left: 10dvw;
 
-  grid-column: 2 / 3;
-  grid-row: 6 / 13;
+    ${medias.mobile} {
+      padding-left: 3dvw;
+    }
+  `}
 `
 
 export const GitHubLogo = styled(GitHub)``
@@ -66,21 +71,9 @@ export const Link = styled.a`
   `}
 `
 
-export const Content = styled.div`
-  ${({ theme: { breakpoints } }) => css`
-    display: flex;
-    flex-direction: column;
-    grid-column: 4 / 13;
-    grid-row: 6 / 12;
-
-    @media (${breakpoints.minSM}) {
-      grid-column: 5 / 13;
-    }
-
-    @media (${breakpoints.minLG}) {
-      grid-column: 6 / 13;
-    }
-  `}
+export const Content = styled(GridItem)`
+  align-self: center;
+  justify-self: center;
 `
 
 export const Name = styled(Span)`

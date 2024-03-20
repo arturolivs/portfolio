@@ -2,6 +2,7 @@ import styled, { css, keyframes } from 'styled-components'
 
 import ScrollDown from '../../assets/icons/scroll-down-icon.svg'
 import { Span } from '../Text'
+import { GridItem } from '../Grid'
 
 const moveDown = keyframes`
 from {
@@ -13,43 +14,44 @@ to {
 }
 `
 
-export const ScrollToContinue = styled.div`
+export const ScrollToContinue = styled(GridItem)`
   ${({ theme: { breakpoints } }) => css`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 0.5rem;
-  z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.5rem;
+    z-index: 1;
+    max-width: fit-content;
+    align-self: center;
+    justify-self: center;
 
-  grid-column: 6 / 8;
-  grid-row: 12 / 13;
-
-  &:hover {
-    span {
-      transform: translateX(4rem);
-
-      &::first-letter {
-        text-transform: lowercase;
-      }
-
-      &::before {
-        opacity: 1;
-        transform: translateX(-8.8rem);
-      }
-    }
-
-    > div::before {
-      height: 35%;
-    }
-  }
-
-  @media (${breakpoints.minLG}) {
     &:hover {
       span {
-        transform: translateX(5rem);
+        transform: translateX(4rem);
+
+        &::first-letter {
+          text-transform: lowercase;
+        }
 
         &::before {
-          transform: translateX(-12.2rem);
+          opacity: 1;
+          transform: translateX(-8.8rem);
+        }
+      }
+
+      > div::before {
+        height: 35%;
+      }
+    }
+
+    @media (${breakpoints.minLG}) {
+      &:hover {
+        span {
+          transform: translateX(5rem);
+
+          &::before {
+            transform: translateX(-12.2rem);
+          }
         }
       }
     }
