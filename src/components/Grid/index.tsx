@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
 
 type GridProps = {
-  rows?: number
-  columns?: number
+  rows?: number | string[]
+  columns?: number | string[]
 }
 
 type GridItemProps = {
@@ -12,13 +12,36 @@ type GridItemProps = {
   rowSize?: number
 }
 
+function generateRows(rows: number | string[]) {
+  if (typeof rows === 'number') {
+    return css`
+      grid-template-rows: repeat(${rows}, 1fr);
+    `
+  }
+
+  return css`
+    grid-template-rows: ${rows.join(' ')};
+  `
+}
+
+function generateColumns(columns: number | string[]) {
+  if (typeof columns === 'number') {
+    return css`
+      grid-template-columns: repeat(${columns}, 1fr);
+    `
+  }
+
+  return css`
+    grid-template-columns: ${columns.join(' ')};
+  `
+}
+
 export default styled.div<GridProps>`
   ${({ rows = 12, columns = 12 }) => css`
     display: grid;
 
-    grid-template-rows: repeat(${rows}, 1fr);
-    grid-template-columns: repeat(${columns}, 1fr);
-    /* grid-auto-rows: min-content; */
+    ${generateRows(rows)}
+    ${generateColumns(columns)}
   `}
 `
 
