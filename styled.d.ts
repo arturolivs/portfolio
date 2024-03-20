@@ -18,5 +18,8 @@ declare module 'styled-components' {
       minLG: string
       minXL: string
     }
+    medias: {
+      mobile: string
+    }
   }
 }
