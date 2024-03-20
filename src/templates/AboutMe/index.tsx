@@ -58,22 +58,12 @@ const AboutMeTemplate = () => {
 
   // <S.BackgroundText>Sobre mim</S.BackgroundText>
   return (
-    <S.AboutMe
-      ref={aboutMeRef}
-      as="section"
-      rows={minMD ? 12 : 4}
-      columns={minMD ? 12 : 3}
-    >
-      <S.AboutMeTitle as="h1" row={3} column={minXL ? 10 : minMD ? 11 : 2}>
+    <S.AboutMe ref={aboutMeRef} as="section" rows={3} columns={2}>
+      <S.AboutMeTitle as="h1" row={1} column={2}>
         Sobre mim
       </S.AboutMeTitle>
 
-      <S.ImageSection
-        row={4}
-        rowSize={minMD ? 8 : 6}
-        column={minXL ? 3 : 2}
-        columnSize={minXL ? 3 : minMD ? 4 : 10}
-      >
+      <S.ImageSection row={1} rowSize={3} column={1}>
         <S.ImageCover
           ref={imageCoverRef}
           shadowOffsetX={shadowOffsetX}
@@ -89,32 +79,26 @@ const AboutMeTemplate = () => {
         </S.ImageCover>
       </S.ImageSection>
 
-      <S.TextSection
-        row={minMD ? 4 : 10}
-        rowSize={minMD ? 5 : 1}
-        column={minXL ? 8 : minMD ? 9 : 2}
-        columnSize={minMD ? 3 : 10}
-      >
+      <S.TextSection row={2} column={2}>
         <S.Quote>
           Criando soluções digitais, transformo suas ideias em realidade
         </S.Quote>
 
         <S.AboutMeText>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Nullam
-          eget felis eget nunc. Eu mi bibendum neque egestas congue quisque.
-          Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam
-          ultrices. Duis ultricies lacus sed turpis tincidunt. Risus nullam eget
-          felis eget nunc lobortis mattis. Eu volutpat odio facilisis mauris sit
-          amet massa vitae.
+          Origem de Jaboatão dos Guararapes, PE, minha jornada no
+          desenvolvimento de sistemas começou lá atrás, a mais de 7 anos, após
+          me formar em Análise e Desenvolvimento de Sistemas. Nessa trajetória
+          obtive experiências ricas e diversificadas. Me especializei em
+          aplicações web, mas também tive oportunidade de trabalhar com projetos
+          significativos em aplicações desktop. Atualmente, estou aprofundando
+          minha formação com uma Especialização em Engenharia de Software,
+          buscando aprimorar ainda mais minhas habilidades e contribuir de forma
+          ainda mais efetiva para o desenvolvimento de soluções tecnológicas
+          inovadoras.
         </S.AboutMeText>
       </S.TextSection>
 
-      <S.TechSection
-        row={11}
-        column={minXL ? 8 : minMD ? 9 : 2}
-        columnSize={minMD ? 3 : 10}
-      >
+      <S.TechSection row={3} column={2}>
         <S.TechTitle>Principais tecnologias</S.TechTitle>
         <S.Techs>
           <S.Tech maxWidth={techIconsSize}>

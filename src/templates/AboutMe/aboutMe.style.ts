@@ -23,7 +23,7 @@ export const AboutMe = styled(Grid)`
   ${({ theme: { breakpoints } }) => css`
     display: flex;
     flex-direction: column;
-    padding: 0 3rem;
+    padding: 0 10dvw;
 
     position: relative;
     z-index: 1;
@@ -31,7 +31,6 @@ export const AboutMe = styled(Grid)`
 
     @media (${breakpoints.minMD}) {
       display: grid;
-      padding: 0;
       height: 100dvh;
     }
 
@@ -60,15 +59,9 @@ export const BackgroundText = styled(Span)`
 `
 
 export const ImageSection = styled(GridItem)`
-  ${({ theme: { breakpoints } }) => css`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    @media (${breakpoints.minMD}) {
-      width: fit-content;
-    }
-  `}
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 export const ImageCover = styled.div`
@@ -95,14 +88,22 @@ export const ImageCover = styled.div`
 
     transition: box-shadow 0.3s ease;
     width: 75%;
+    height: fit-content;
 
     @media (${breakpoints.minSM}) {
-      width: 40%;
+      width: 50%;
     }
 
     @media (${breakpoints.minMD}) {
-      height: 100%;
-      width: auto;
+      width: 60%;
+    }
+
+    @media (${breakpoints.minLG}) {
+      width: 50%;
+    }
+
+    @media (${breakpoints.minXL}) {
+      width: 40%;
     }
   `}
 `
@@ -123,11 +124,12 @@ export const TextSection = styled(GridItem)`
 
 export const AboutMeTitle = styled(GridItem)`
   ${({ theme: { breakpoints, colors } }) => css`
+    width: 100%;
     font-family: 'Roboto Mono';
     color: ${colors.neutral_100};
     text-shadow: 4px 4px 4px ${colorOpacify(colors.neutral_500, 0.4)};
+    text-align: end;
 
-    width: max-content;
     font-size: 2.5rem;
     align-self: flex-end;
     margin: 4.5rem 0;
@@ -161,6 +163,15 @@ export const Quote = styled(Heading2)`
       left: -15%;
       top: -50%;
       font-size: 10rem;
+      top: -20%;
+      font-size: 5rem;
+    }
+
+    @media (${breakpoints.minSM}) {
+      &::before {
+        top: -60%;
+        font-size: 10rem;
+      }
     }
 
     @media (${breakpoints.minLG}) {
@@ -169,6 +180,10 @@ export const Quote = styled(Heading2)`
 
     @media (${breakpoints.minXL}) {
       font-size: 2rem;
+
+      &::before {
+        top: -50%;
+      }
     }
   `}
 `
@@ -202,8 +217,16 @@ export const TechSection = styled(GridItem)`
 export const TechTitle = styled(Heading3)``
 
 export const Techs = styled.ul`
-  display: flex;
-  column-gap: 1rem;
+  ${({ theme: { breakpoints } }) => css`
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @media (${breakpoints.minMD}) {
+      width: auto;
+      column-gap: 2rem;
+    }
+  `}
 `
 
 type TechProps = { maxWidth?: number; theme: DefaultTheme }
